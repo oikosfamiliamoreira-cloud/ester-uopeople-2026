@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#17231c">
+<title>Caderno Ester — UoPeople 2026</title>
+
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display",Arial,sans-serif;
+  background:#f5f1e8;
+  color:#202820;
+}
+header{
+  background:#17231c;
+  color:white;
+  padding:34px 22px 28px;
+  border-radius:0 0 28px 28px;
+}
+header h1{
+  margin:0;
+  font-size:30px;
+  line-height:1.1;
+}
+header p{
+  margin:10px 0 0;
+  opacity:.8;
+}
+nav{
+  display:flex;
+  gap:8px;
+  overflow-x:auto;
+  padding:14px;
+  position:sticky;
+  top:0;
+  background:#f5f1e8;
+  z-index:5;
+}
+nav button{
+  border:0;
+  background:white;
+  color:#344438;
+  padding:11px 15px;
+  border-radius:18px;
+  white-space:nowrap;
+  font-weight:600;
+}
+nav button.active{
+  background:#344438;
+  color:white;
+}
+main{
+  max-width:700px;
+  margin:auto;
+  padding:10px 16px 50px;
+}
+section{display:none}
+section.active{display:block}
+.card{
+  background:white;
+  border-radius:22px;
+  padding:20px;
+  margin:14px 0;
+  box-shadow:0 3px 14px rgba(0,0,0,.06);
+}
+.card h2,.card h3{margin-top:0}
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+.stat{
+  background:#e5eadf;
+  padding:18px;
+  border-radius:18px;
+}
+.stat strong{
+  display:block;
+  font-size:26px;
+}
+input,textarea,select{
+  width:100%;
+  border:1px solid #ccd3c8;
+  border-radius:14px;
+  padding:13px;
+  margin:6px 0 12px;
+  font-size:16px;
+  background:#fff;
+}
+textarea{min-height:110px}
+button.primary{
+  width:100%;
+  border:0;
+  background:#344438;
+  color:white;
+  padding:14px;
+  border-radius:15px;
+  font-size:16px;
+  font-weight:700;
+}
+.item{
+  border-left:4px solid #b66b4b;
+  padding:12px 14px;
+  margin:10px 0;
+  background:#faf8f2;
+  border-radius:10px;
+}
+.small{font-size:14px;opacity:.7}
+footer{
+  text-align:center;
+  padding:25px;
+  opacity:.6;
+  font-size:13px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>ESTER — UoPeople 2026</h1>
+  <p>Caderno Académico Digital</p>
+</header>
+
+<nav>
+  <button class="active" onclick="show('inicio',this)">Início</button>
+  <button onclick="show('disciplinas',this)">Disciplinas</button>
+  <button onclick="show('tarefas',this)">Tarefas</button>
+  <button onclick="show('notas',this)">Notas</button>
+  <button onclick="show('anotacoes',this)">Anotações</button>
+</nav>
+
+<main>
+
+<section id="inicio" class="active">
+
+  <div class="card">
+    <h2>Olá, Ester 👋</h2>
+    <p>Este é o centro de controlo dos teus estudos na UoPeople.</p>
+    <p class="small">As informações académicas oficiais devem ser confirmadas junto da universidade.</p>
+  </div>
+
+  <div class="grid">
+    <div class="stat">
+      <strong id="totalTarefas">0</strong>
+      Tarefas
+    </div>
+    <div class="stat">
+      <strong id="totalNotas">0</strong>
+      Notas
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Objetivo</h3>
+    <p>Organizar estudos, tarefas, prazos, notas e anotações num único lugar.</p>
+  </div>
+
+</section>
+
+<section id="disciplinas">
+
+  <div class="card">
+    <h2>Disciplinas</h2>
+
+    <input id="disciplinaInput" placeholder="Nome da disciplina">
+
+    <button class="primary" onclick="addDisciplina()">
+      Adicionar disciplina
+    </button>
+
+    <div id="listaDisciplinas"></div>
+  </div>
+
+</section>
+
+<section id="tarefas">
+
+  <div class="card">
+    <h2>Tarefas</h2>
+
+    <input id="tarefaInput" placeholder="Ex.: Discussion Week 1">
+
+    <input id="prazoInput" type="date">
+
+    <button class="primary" onclick="addTarefa()">
+      Adicionar tarefa
+    </button>
+
+    <div id="listaTarefas"></div>
+  </div>
+
+</section>
+
+<section id="notas">
+
+  <div class="card">
+    <h2>Notas</h2>
+
+    <input id="notaDisciplina" placeholder="Disciplina">
+
+    <input id="notaValor" placeholder="Nota">
+
+    <button class="primary" onclick="addNota()">
+      Guardar nota
+    </button>
+
+    <div id="listaNotas"></div>
+  </div>
+
+</section>
+
+<section id="anotacoes">
+
+  <div class="card">
+    <h2>Anotações</h2>
+
+    <input id="tituloNota" placeholder="Título">
+
+    <textarea id="textoNota" placeholder="Escreva aqui..."></textarea>
+
+    <button class="primary" onclick="addAnotacao()">
+      Guardar anotação
+    </button>
+
+    <div id="listaAnotacoes"></div>
+  </div>
+
+</section>
+
+</main>
+
+<footer>
+  Ester — UoPeople 2026
+</footer>
+
+<script>
+
+function get(key){
+  return JSON.parse(localStorage.getItem(key) || "[]");
+}
+
+function save(key,data){
+  localStorage.setItem(key,JSON.stringify(data));
+}
+
+function show(id,btn){
+  document.querySelectorAll("section").forEach(s=>s.classList.remove("active"));
+  document.getElementById(id).classList.add("active");
+
+  document.querySelectorAll("nav button").forEach(b=>b.classList.remove("active"));
+  btn.classList.add("active");
+}
+
+function addDisciplina(){
+  const input=document.getElementById("disciplinaInput");
+  if(!input.value.trim()) return;
+
+  const data=get("disciplinas");
+  data.push(input.value.trim());
+  save("disciplinas",data);
+
+  input.value="";
+  render();
+}
+
+function addTarefa(){
+  const texto=document.getElementById("tarefaInput");
+  const prazo=document.getElementById("prazoInput");
+
+  if(!texto.value.trim()) return;
+
+  const data=get("tarefas");
+
+  data.push({
+    texto:texto.value.trim(),
+    prazo:prazo.value
+  });
+
+  save("tarefas",data);
+
+  texto.value="";
+  prazo.value="";
+  render();
+}
+
+function addNota(){
+  const disciplina=document.getElementById("notaDisciplina");
+  const valor=document.getElementById("notaValor");
+
+  if(!disciplina.value.trim()) return;
+
+  const data=get("notas");
+
+  data.push({
+    disciplina:disciplina.value.trim(),
+    valor:valor.value.trim()
+  });
+
+  save("notas",data);
+
+  disciplina.value="";
+  valor.value="";
+  render();
+}
+
+function addAnotacao(){
+  const titulo=document.getElementById("tituloNota");
+  const texto=document.getElementById("textoNota");
+
+  if(!texto.value.trim()) return;
+
+  const data=get("anotacoes");
+
+  data.push({
+    titulo:titulo.value.trim() || "Anotação",
+    texto:texto.value.trim()
+  });
+
+  save("anotacoes",data);
+
+  titulo.value="";
+  texto.value="";
+  render();
+}
+
+function render(){
+
+  const disciplinas=get("disciplinas");
+  const tarefas=get("tarefas");
+  const notas=get("notas");
+  const anotacoes=get("anotacoes");
+
+  document.getElementById("totalTarefas").textContent=tarefas.length;
+  document.getElementById("totalNotas").textContent=notas.length;
+
+  document.getElementById("listaDisciplinas").innerHTML=
+    disciplinas.map((x,i)=>
+      `<div class="item"><strong>${escapeHTML(x)}</strong></div>`
+    ).join("");
+
+  document.getElementById("listaTarefas").innerHTML=
+    tarefas.map(x=>
+      `<div class="item">
+        <strong>${escapeHTML(x.texto)}</strong>
+        ${x.prazo ? `<div class="small">Prazo: ${escapeHTML(x.prazo)}</div>` : ""}
+      </div>`
+    ).join("");
+
+  document.getElementById("listaNotas").innerHTML=
+    notas.map(x=>
+      `<div class="item">
+        <strong>${escapeHTML(x.disciplina)}</strong>
+        <div>Nota: ${escapeHTML(x.valor)}</div>
+      </div>`
+    ).join("");
+
+  document.getElementById("listaAnotacoes").innerHTML=
+    anotacoes.map(x=>
+      `<div class="item">
+        <strong>${escapeHTML(x.titulo)}</strong>
+        <div>${escapeHTML(x.texto)}</div>
+      </div>`
+    ).join("");
+}
+
+function escapeHTML(text){
+  return String(text)
+    .replaceAll("&","&amp;")
+    .replaceAll("<","&lt;")
+    .replaceAll(">","&gt;")
+    .replaceAll('"',"&quot;")
+    .replaceAll("'","&#039;");
+}
+
+render();
+
+</script>
+
+</body>
+</html>
