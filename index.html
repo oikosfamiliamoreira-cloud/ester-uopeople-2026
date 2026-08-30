@@ -1,384 +1,430 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#17231c">
-<title>Caderno Ester — UoPeople 2026</title>
-
-<style>
-*{box-sizing:border-box}
-body{
-  margin:0;
-  font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display",Arial,sans-serif;
-  background:#f5f1e8;
-  color:#202820;
-}
-header{
-  background:#17231c;
-  color:white;
-  padding:34px 22px 28px;
-  border-radius:0 0 28px 28px;
-}
-header h1{
-  margin:0;
-  font-size:30px;
-  line-height:1.1;
-}
-header p{
-  margin:10px 0 0;
-  opacity:.8;
-}
-nav{
-  display:flex;
-  gap:8px;
-  overflow-x:auto;
-  padding:14px;
-  position:sticky;
-  top:0;
-  background:#f5f1e8;
-  z-index:5;
-}
-nav button{
-  border:0;
-  background:white;
-  color:#344438;
-  padding:11px 15px;
-  border-radius:18px;
-  white-space:nowrap;
-  font-weight:600;
-}
-nav button.active{
-  background:#344438;
-  color:white;
-}
-main{
-  max-width:700px;
-  margin:auto;
-  padding:10px 16px 50px;
-}
-section{display:none}
-section.active{display:block}
-.card{
-  background:white;
-  border-radius:22px;
-  padding:20px;
-  margin:14px 0;
-  box-shadow:0 3px 14px rgba(0,0,0,.06);
-}
-.card h2,.card h3{margin-top:0}
-.grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:12px;
-}
-.stat{
-  background:#e5eadf;
-  padding:18px;
-  border-radius:18px;
-}
-.stat strong{
-  display:block;
-  font-size:26px;
-}
-input,textarea,select{
-  width:100%;
-  border:1px solid #ccd3c8;
-  border-radius:14px;
-  padding:13px;
-  margin:6px 0 12px;
-  font-size:16px;
-  background:#fff;
-}
-textarea{min-height:110px}
-button.primary{
-  width:100%;
-  border:0;
-  background:#344438;
-  color:white;
-  padding:14px;
-  border-radius:15px;
-  font-size:16px;
-  font-weight:700;
-}
-.item{
-  border-left:4px solid #b66b4b;
-  padding:12px 14px;
-  margin:10px 0;
-  background:#faf8f2;
-  border-radius:10px;
-}
-.small{font-size:14px;opacity:.7}
-footer{
-  text-align:center;
-  padding:25px;
-  opacity:.6;
-  font-size:13px;
-}
-</style>
-</head>
-
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#254010"><meta name="apple-mobile-web-app-capable" content="yes">
+<title>Ester Moreira · UoPeople · ASBA · 2026</title><style>
+:root{--green:#36670D;--deep:#254010;--red:#C0110D;--ink:#181B15;--paper:#FCFCFC;--sand:#E8E5DE;--line:#CBC6BC;--muted:#686c64}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f3f2ee;color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;line-height:1.55}
+.wrap{max-width:860px;margin:auto}.hero{background:var(--deep);color:#fff;padding:28px 18px 34px;position:relative;overflow:hidden}.hero:before{content:"";position:absolute;right:-110px;top:-130px;width:330px;height:330px;border:1px solid rgba(255,255,255,.16);border-radius:50%;box-shadow:0 0 0 32px rgba(255,255,255,.035),0 0 0 64px rgba(255,255,255,.025)}
+.kicker{font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#dce9d3}.hero h1{font-family:"Arial Narrow",Arial,sans-serif;font-size:clamp(42px,12vw,72px);line-height:.92;letter-spacing:-.05em;margin:13px 0}.hero p{font-size:16px;max-width:650px;margin:0;opacity:.92}.meta{display:flex;flex-wrap:wrap;gap:7px;margin-top:20px}.pill{background:#fff;color:var(--deep);border-radius:999px;padding:7px 10px;font-size:11px;font-weight:800}
+.nav{position:sticky;top:0;z-index:20;background:rgba(252,252,252,.97);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);overflow-x:auto}.nav .wrap{display:flex;gap:2px}.nav a{white-space:nowrap;padding:11px 12px;color:var(--deep);text-decoration:none;font-size:12px;font-weight:800}
+main{padding:15px 11px 50px}.section{background:var(--paper);border:1px solid var(--line);border-left:4px solid var(--green);margin:0 0 13px;padding:19px 16px;border-radius:3px;box-shadow:0 4px 18px rgba(24,27,21,.04)}.section h2{font-family:"Arial Narrow",Arial,sans-serif;color:var(--deep);font-size:29px;line-height:1.05;margin:4px 0 10px;letter-spacing:-.025em}.eyebrow{font-size:10px;font-weight:900;letter-spacing:.12em;color:var(--green);text-transform:uppercase}.lead{font-size:16px}.callout{background:var(--sand);border-left:4px solid var(--green);padding:14px;margin:13px 0}.warning{background:#fff2f1;border-left-color:var(--red)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:14px 0}.stat{background:var(--sand);padding:12px 10px;border-top:3px solid var(--green)}.stat b{display:block;color:var(--deep);font-size:22px;line-height:1}.stat span{font-size:11px}
+.progress{height:9px;background:var(--sand);border-radius:99px;overflow:hidden}.progress i{display:block;height:100%;background:var(--green);width:0;transition:.25s}.progress-row{display:flex;justify-content:space-between;font-size:12px;font-weight:800;margin-bottom:6px}
+.search{width:100%;padding:13px 14px;border:1px solid var(--line);font-size:15px;border-radius:4px;background:white}.courses{display:grid;gap:11px}.course{background:#fff;border:1px solid var(--line);border-left:4px solid var(--green);padding:15px}.course-top{display:flex;justify-content:space-between;align-items:center}.num{font-size:24px;font-weight:900;color:var(--deep)}.badge{font-size:9px;font-weight:900;letter-spacing:.08em;color:var(--green);background:var(--sand);padding:5px 7px}.course h3{font-size:21px;line-height:1.08;margin:8px 0 3px;color:var(--deep)}.code{font-size:12px;color:var(--muted);font-weight:700}.chips{margin:8px 0}.chips span{font-size:11px;border:1px solid var(--line);padding:4px 6px}.course p{font-size:14px;margin:10px 0}.course ul{padding-left:20px;font-size:13px}.course details{border-top:1px solid var(--line);padding:9px 0}.course summary{cursor:pointer;color:var(--deep);font-size:13px}.example{background:var(--sand);padding:10px;font-size:13px;margin-top:7px}.done{display:block;margin-top:11px;font-size:12px;font-weight:700}.done input{accent-color:var(--green);transform:translateY(1px)}
+.terms{display:grid;gap:9px}.term{display:grid;grid-template-columns:38px 1fr auto;gap:11px;align-items:center;background:#fff;border:1px solid var(--line);padding:11px}.term-no{font-size:20px;font-weight:900;color:var(--deep)}.term-title{font-weight:900;color:var(--deep)}.term-date{font-size:11px;color:var(--muted)}.term .done{margin:0;font-size:10px}
+.week{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.slot{background:var(--sand);padding:11px}.slot b{color:var(--deep);display:block}.slot span{font-size:12px}.routine{display:grid;gap:8px}.routine-row{display:grid;grid-template-columns:70px 1fr 1fr;gap:6px;align-items:stretch}.routine-row>*{padding:9px;background:#fff;border:1px solid var(--line);font-size:12px}.routine-row b{background:var(--deep);color:#fff}
+details.faq{background:#fff;border:1px solid var(--line);padding:11px;margin:7px 0}.faq summary{font-weight:800;color:var(--deep);cursor:pointer}
+.sources a{color:var(--green);font-weight:800}.source-line{font-size:12px;margin:9px 0}.small{font-size:12px;color:var(--muted)}footer{background:var(--deep);color:#fff;padding:28px 18px;font-size:12px}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.btn{border:0;background:var(--green);color:white;padding:11px 13px;font-weight:800;border-radius:3px;text-decoration:none;cursor:pointer}.btn.alt{background:white;color:var(--deep);border:1px solid var(--line)}
+@media(min-width:700px){main{padding:22px 18px 60px}.courses{grid-template-columns:repeat(2,1fr)}.routine-row{grid-template-columns:80px 1fr 1fr}.section{padding:23px 22px}}
+@media print{.nav,.actions,.search,.hero:before{display:none!important}body{background:white}.section,.course{box-shadow:none;break-inside:avoid}.hero{background:white;color:var(--ink);border-bottom:3px solid var(--green)}.kicker{color:var(--green)}}
+</style></head>
 <body>
+<header class="hero"><div class="wrap">
+<div class="kicker">University of the People · Associate of Science in Business Administration</div>
+<h1>Ester Moreira<br><span style="font-weight:500">Caderno Acadêmico</span></h1>
+<p>2026 · planejamento completo para estudar, acompanhar as 20 etapas do ASBA e construir uma rotina acadêmica sustentável.</p>
+<div class="meta"><span class="pill">60 CRÉDITOS</span><span class="pill">20 CURSOS</span><span class="pill">2 ANOS · META</span><span class="pill">100% ONLINE</span></div>
+</div></header>
+<nav class="nav"><div class="wrap">
+<a href="#visao">Visão</a><a href="#faculdade">Faculdade</a><a href="#curso">Curso</a><a href="#plano">2 anos</a><a href="#rotina">Rotina</a><a href="#materias">20 matérias</a><a href="#financeiro">Financeiro</a><a href="#fontes">Fontes</a>
+</div></nav>
+<main><div class="wrap">
 
-<header>
-  <h1>ESTER — UoPeople 2026</h1>
-  <p>Caderno Académico Digital</p>
-</header>
+<section class="section" id="visao">
+<div class="eyebrow">01 · Comece aqui</div><h2>O mapa da jornada</h2>
+<p class="lead"><b>O objetivo não é apenas “terminar”.</b> É concluir cada term sabendo o que estudou, onde teve dificuldade, quais competências desenvolveu e qual é o próximo passo.</p>
+<div class="stats"><div class="stat"><b>20</b><span>cursos</span></div><div class="stat"><b>60</b><span>créditos</span></div><div class="stat"><b>10</b><span>terms · meta</span></div></div>
+<div class="progress-row"><span>Progresso registrado</span><span><span data-progress-text>0/20</span></span></div><div class="progress"><i data-progress></i></div>
+<div class="callout"><b>Regra de ouro:</b> a UoPeople informa que cada curso exige no mínimo cerca de <b>15 horas de estudo por semana</b>; para dois cursos, planeje aproximadamente <b>30–34 horas/semana</b>. Isso é muito mais realista do que tentar encaixar a graduação em 2–3 horas por dia.</div>
+<div class="callout warning"><b>Importante:</b> o pathway de cada estudante pode mudar conforme créditos transferidos, requisitos vigentes, carga permitida e disponibilidade. O <b>portal da Ester</b> é a autoridade final para a matrícula.</div>
+</section>
 
-<nav>
-  <button class="active" onclick="show('inicio',this)">Início</button>
-  <button onclick="show('disciplinas',this)">Disciplinas</button>
-  <button onclick="show('tarefas',this)">Tarefas</button>
-  <button onclick="show('notas',this)">Notas</button>
-  <button onclick="show('anotacoes',this)">Anotações</button>
-</nav>
+<section class="section" id="faculdade">
+<div class="eyebrow">02 · A instituição</div><h2>University of the People</h2>
+<p>A UoPeople é uma universidade norte-americana <b>sem fins lucrativos, online e tuition-free</b>: não cobra tuition tradicional, embora existam taxas de candidatura e assessment. O modelo é assíncrono, sem aulas ao vivo ou horários fixos.</p>
+<p>Para a Ester, o ponto mais importante é a <b>acreditação institucional atual</b>: a WSCUC registra a University of the People como <b>Accredited</b>, e identifica o <b>Associate of Science in Business Administration</b> como programa de Associate em modalidade de educação a distância. A CHEA também lista a UoPeople com a WASC Senior College and University Commission como acreditadora institucional.</p>
+<div class="callout"><b>Reconhecimento ≠ aceitação automática em qualquer lugar.</b> A acreditação é uma base importante, mas transferência de créditos, equivalência profissional, concursos, licenças e reconhecimento em outro país podem depender da instituição ou autoridade que fará a análise.</div>
+<p><b>Benefícios práticos:</b> flexibilidade assíncrona, custo reduzido, possibilidade de estudar de qualquer lugar com internet, possibilidade de transferência de créditos dentro das regras e caminho para continuar para o Bachelor.</p>
+</section>
 
-<main>
+<section class="section" id="curso">
+<div class="eyebrow">03 · O curso</div><h2>ASBA · Business Administration</h2>
+<p>O <b>Associate of Science in Business Administration</b> combina uma base de liberal arts com fundamentos de negócios. A UoPeople informa <b>20 cursos / 60 créditos</b>, com <b>42 créditos de major e 18 de general education</b>. O programa trabalha gestão, contabilidade, economia, marketing, finanças, comunicação, e-commerce e gestão multinacional.</p>
+<div class="callout"><b>Saídas profissionais indicadas pela própria UoPeople:</b> Business Administrator, Operations Analyst, Payroll Specialist e Sales Supervisor, entre outras. A universidade também oferece Career Service Center com apoio de currículo, networking e entrevistas.</div>
+<h3>O que a Ester deve sair sabendo fazer</h3>
+<ul><li>Interpretar dados e usá-los para decisões.</li><li>Entender diferentes áreas de uma empresa.</li><li>Aplicar conceitos econômicos em decisões de negócio.</li><li>Comunicar argumentos com evidências.</li><li>Trabalhar em equipe e lidar com contextos culturais.</li><li>Raciocinar eticamente diante de decisões empresariais.</li></ul>
+</section>
 
-<section id="inicio" class="active">
-
-  <div class="card">
-    <h2>Olá, Ester 👋</h2>
-    <p>Este é o centro de controlo dos teus estudos na UoPeople.</p>
-    <p class="small">As informações académicas oficiais devem ser confirmadas junto da universidade.</p>
-  </div>
-
-  <div class="grid">
-    <div class="stat">
-      <strong id="totalTarefas">0</strong>
-      Tarefas
+<section class="section" id="plano">
+<div class="eyebrow">04 · Plano de 2 anos</div><h2>10 terms · 2 cursos por term</h2>
+<p>A UoPeople informa cinco terms acadêmicos por ano. O catálogo permite, para estudantes de graduação em tempo integral, até 2–4 cursos por term conforme CGPA; <b>dois cursos por term</b> é a estratégia conservadora para completar 20 cursos em dois anos.</p>
+<div class="callout"><b>Início mais próximo de 2026:</b> o calendário oficial mostra Term 2 começando em <b>12 de novembro de 2026</b>. Os quatro primeiros terms do plano abaixo usam datas oficiais; os terms seguintes são apresentados como slots de planejamento porque o calendário 2028–29 ainda deve ser confirmado.</div>
+<div class="terms">
+    <div class="term">
+      <div class="term-no">01</div>
+      <div><div class="term-title">T2 2026-27</div><div class="term-date">12 nov 2026</div>
+      <b>UNIV 1001 + BUS 1101</b><div class="muted">6 créditos · Fundação + gestão</div></div>
+      <label class="done"><input type="checkbox" class="term-check" data-term="1"> concluído</label>
     </div>
-    <div class="stat">
-      <strong id="totalNotas">0</strong>
-      Notas
+    <div class="term">
+      <div class="term-no">02</div>
+      <div><div class="term-title">T3 2026-27</div><div class="term-date">28 jan 2027</div>
+      <b>ENGL 1102 + BUS 1102</b><div class="muted">6 créditos · Escrita + contabilidade</div></div>
+      <label class="done"><input type="checkbox" class="term-check" data-term="2"> concluído</label>
     </div>
-  </div>
-
-  <div class="card">
-    <h3>Objetivo</h3>
-    <p>Organizar estudos, tarefas, prazos, notas e anotações num único lugar.</p>
-  </div>
-
+    <div class="term">
+      <div class="term-no">03</div>
+      <div><div class="term-title">T4 2026-27</div><div class="term-date">08 abr 2027</div>
+      <b>GE Social/Behavioral + BUS 1103</b><div class="muted">6 créditos · Contexto social + microeconomia</div></div>
+      <label class="done"><input type="checkbox" class="term-check" data-term="3"> concluído</label>
+    </div>
+    <div class="term">
+      <div class="term-no">04</div>
+      <div><div class="term-title">T5 2026-27</div><div class="term-date">17 jun 2027</div>
+      <b>GE Social/Behavioral + BUS 1104</b><div class="muted">6 créditos · Comportamento + macroeconomia</div></div>
+      <label class="done"><input type="checkbox" class="term-check" data-term="4"> concluído</label>
+    </div>
+    <div class="term">
+      <div class="term-no">05</div>
+      <div><div class="term-title">T1 2027-28</div><div class="term-date">T1 2027-28</div>
+      <b>GE Math + BUS 2201</b><div class="muted">6 créditos · Quantitativo + marketing</div></div>
+      <label class="done"><input type="checkbox" class="term-check" data-term="5"> concluído</label>
+    </div>
+    <div class="term">
+      <div class="term-no">06</div>
+      <div><div class="term-title">T2 2027-28</div><div class="term-date">T2 2027-28</div>
+      <b>GE Math + BUS 2202</b><div class="muted">6 créditos · Quantitativo + e-commerce</div></div>
+      <label class="done"><input type="checkbox" class="term-check" data-term="6"> concluído</label>
+    </div>
+    <div class="term">
+      <div class="term-no">07</div>
+      <div><div class="term-title">T3 2027-28</div><div class="term-date">T3 2027-28</div>
+      <b>GE Ethics + BUS 2203</b><div class="muted">6 créditos · Ética + finanças</div></div>
+      <label class="done"><input type="checkbox" class="term-check" data-term="7"> concluído</label>
+    </div>
+    <div class="term">
+      <div class="term-no">08</div>
+      <div><div class="term-title">T4 2027-28</div><div class="term-date">T4 2027-28</div>
+      <b>GE Science/Technology + COM 2001</b><div class="muted">6 créditos · Ciência + comunicação</div></div>
+      <label class="done"><input type="checkbox" class="term-check" data-term="8"> concluído</label>
+    </div>
+    <div class="term">
+      <div class="term-no">09</div>
+      <div><div class="term-title">T5 2027-28</div><div class="term-date">T5 2027-28</div>
+      <b>GE Humanities + Elective</b><div class="muted">6 créditos · Humanidades + escolha estratégica</div></div>
+      <label class="done"><input type="checkbox" class="term-check" data-term="9"> concluído</label>
+    </div>
+    <div class="term">
+      <div class="term-no">10</div>
+      <div><div class="term-title">T1 2028-29*</div><div class="term-date">T1 2028-29*</div>
+      <b>GE Culture/Belief + BUS 2207</b><div class="muted">6 créditos · Cultura + gestão global</div></div>
+      <label class="done"><input type="checkbox" class="term-check" data-term="10"> concluído</label>
+    </div></div>
+<p class="small">* “T1 2028–29” é uma projeção do décimo term para completar 20 cursos; inserir as datas oficiais assim que a UoPeople publicar o calendário correspondente.</p>
 </section>
 
-<section id="disciplinas">
-
-  <div class="card">
-    <h2>Disciplinas</h2>
-
-    <input id="disciplinaInput" placeholder="Nome da disciplina">
-
-    <button class="primary" onclick="addDisciplina()">
-      Adicionar disciplina
-    </button>
-
-    <div id="listaDisciplinas"></div>
-  </div>
-
+<section class="section" id="rotina">
+<div class="eyebrow">05 · Rotina</div><h2>Como estudar 2 cursos sem se perder</h2>
+<p><b>Meta-base: 30–34 horas por semana.</b> Uma rotina prática é trabalhar cerca de <b>5 horas por dia, de segunda a sábado</b>, e usar o domingo para 2 horas de revisão/planejamento. Não precisa ser exatamente nesses horários; o importante é preservar os blocos.</p>
+<div class="routine">
+<div class="routine-row"><b>SEG</b><span>2h30 · Curso A<br>2h30 · Curso B</span><span>Leitura + primeira atividade</span></div>
+<div class="routine-row"><b>TER</b><span>2h30 · A<br>2h30 · B</span><span>Discussion + notas</span></div>
+<div class="routine-row"><b>QUA</b><span>2h30 · A<br>2h30 · B</span><span>Assignment / exercícios</span></div>
+<div class="routine-row"><b>QUI</b><span>2h30 · A<br>2h30 · B</span><span>Revisão + peer assessment</span></div>
+<div class="routine-row"><b>SEX</b><span>2h30 · A<br>2h30 · B</span><span>Finalizar entregas</span></div>
+<div class="routine-row"><b>SÁB</b><span>2h30 · A<br>2h30 · B</span><span>Buffer + preparação da semana seguinte</span></div>
+<div class="routine-row"><b>DOM</b><span>1h · A<br>1h · B</span><span>Planejamento + descanso</span></div>
+</div>
+<div class="callout"><b>Estrutura de cada bloco de 2h30:</b> 15 min organizar → 60 min leitura/compreensão → 10 min pausa → 50 min produção → 15 min registrar próximo passo.</div>
 </section>
 
-<section id="tarefas">
-
-  <div class="card">
-    <h2>Tarefas</h2>
-
-    <input id="tarefaInput" placeholder="Ex.: Discussion Week 1">
-
-    <input id="prazoInput" type="date">
-
-    <button class="primary" onclick="addTarefa()">
-      Adicionar tarefa
-    </button>
-
-    <div id="listaTarefas"></div>
-  </div>
-
+<section class="section" id="materias">
+<div class="eyebrow">06 · Currículo completo</div><h2>As 20 etapas</h2>
+<p>As dez disciplinas de major são as exigidas pelo catálogo atual; as demais posições são categorias de general education/eletiva e precisam ser preenchidas de acordo com o pathway individual. Abaixo, cada etapa tem um objetivo de estudo e um exemplo de como registrar o aprendizado.</p>
+<input id="courseSearch" class="search" placeholder="Pesquisar matéria, código ou palavra-chave…" autocomplete="off">
+<div class="courses" style="margin-top:12px">
+    <article class="course" data-name="online education strategies univ 1001">
+      <div class="course-top"><span class="num">01</span><span class="badge">FUNDAÇÃO / NÚCLEO</span></div>
+      <h3>Online Education Strategies</h3>
+      <div class="code">UNIV 1001 · 3 créditos</div>
+      <div class="chips"><span>Pré-requisito: Nenhum</span></div>
+      <p>Introduz o método de estudo online da UoPeople e as práticas necessárias para organizar o trabalho acadêmico.</p>
+      <details><summary><b>O que dominar</b></summary><ul><li>navegação no campus online</li><li>rotina e gestão do tempo</li><li>participação em fóruns</li><li>integridade acadêmica</li><li>planejamento semanal</li></ul></details>
+      <details><summary><b>Exemplo de registro no caderno</b></summary><div class="example">Registro: “Hoje aprendi a localizar syllabus, Learning Guide e rubric. Próximo passo: transformar os prazos da semana em uma lista de tarefas.”</div></details>
+      <label class="done"><input type="checkbox" class="course-check" data-course="1"> <span>Marcar como estudada/concluída</span></label>
+    </article>
+    <article class="course" data-name="principles of business management bus 1101">
+      <div class="course-top"><span class="num">02</span><span class="badge">MAJOR</span></div>
+      <h3>Principles of Business Management</h3>
+      <div class="code">BUS 1101 · 3 créditos</div>
+      <div class="chips"><span>Pré-requisito: Nenhum</span></div>
+      <p>Fundamentos de administração: planejamento, liderança, organização, controle, cultura, comportamento, motivação e recursos humanos.</p>
+      <details><summary><b>O que dominar</b></summary><ul><li>management theory</li><li>mission, strategy &amp; objectives</li><li>leadership</li><li>decision-making &amp; control</li><li>organizational behavior</li><li>motivation</li><li>human resources</li></ul></details>
+      <details><summary><b>Exemplo de registro no caderno</b></summary><div class="example">Registro: “Comparei dois estilos de liderança e expliquei qual seria mais adequado para uma equipe pequena.”</div></details>
+      <label class="done"><input type="checkbox" class="course-check" data-course="2"> <span>Marcar como estudada/concluída</span></label>
+    </article>
+    <article class="course" data-name="english composition 2 engl 1102">
+      <div class="course-top"><span class="num">03</span><span class="badge">GENERAL EDUCATION</span></div>
+      <h3>English Composition 2</h3>
+      <div class="code">ENGL 1102 · 3 créditos</div>
+      <div class="chips"><span>Pré-requisito: Nenhum</span></div>
+      <p>Aprimora escrita acadêmica, organização de argumentos, uso de evidências e comunicação escrita em nível universitário.</p>
+      <details><summary><b>O que dominar</b></summary><ul><li>thesis statement</li><li>estrutura de parágrafos</li><li>evidência e fontes</li><li>paráfrase e citação</li><li>revisão e clareza</li></ul></details>
+      <details><summary><b>Exemplo de registro no caderno</b></summary><div class="example">Registro: “Escrevi a tese, organizei três argumentos e revisei cada parágrafo para garantir que a evidência sustente a afirmação.”</div></details>
+      <label class="done"><input type="checkbox" class="course-check" data-course="3"> <span>Marcar como estudada/concluída</span></label>
+    </article>
+    <article class="course" data-name="basic accounting bus 1102">
+      <div class="course-top"><span class="num">04</span><span class="badge">MAJOR</span></div>
+      <h3>Basic Accounting</h3>
+      <div class="code">BUS 1102 · 3 créditos</div>
+      <div class="chips"><span>Pré-requisito: BUS 1101</span></div>
+      <p>Contabilidade financeira básica: ciclo contábil, lançamentos, demonstrações financeiras, contas a receber, estoques, ativos e passivos.</p>
+      <details><summary><b>O que dominar</b></summary><ul><li>accounting cycle</li><li>journal entries</li><li>financial statements</li><li>receivables &amp; inventory</li><li>internal controls</li><li>cash flows</li></ul></details>
+      <details><summary><b>Exemplo de registro no caderno</b></summary><div class="example">Registro: “Pratiquei lançamentos pelo regime de competência e montei uma demonstração de resultados simples.”</div></details>
+      <label class="done"><input type="checkbox" class="course-check" data-course="4"> <span>Marcar como estudada/concluída</span></label>
+    </article>
+    <article class="course" data-name="social &amp; behavioral science ge">
+      <div class="course-top"><span class="num">05</span><span class="badge">GENERAL EDUCATION</span></div>
+      <h3>Social &amp; Behavioral Science</h3>
+      <div class="code">GE · 3 créditos</div>
+      <div class="chips"><span>Pré-requisito: Conforme curso escolhido</span></div>
+      <p>Escolha uma disciplina da área social/comportamental indicada no pathway. Opções oficiais incluem Introdução à Psicologia, Sociologia, Emotional Intelligence, Globalization e outras.</p>
+      <details><summary><b>O que dominar</b></summary><ul><li>comportamento humano</li><li>sociedade</li><li>cultura</li><li>relações sociais</li><li>análise de contexto</li></ul></details>
+      <details><summary><b>Exemplo de registro no caderno</b></summary><div class="example">Registro: “Conceito central: ____. Evidência do material: ____. Exemplo aplicado a uma organização: ____.”</div></details>
+      <label class="done"><input type="checkbox" class="course-check" data-course="5"> <span>Marcar como estudada/concluída</span></label>
+    </article>
+    <article class="course" data-name="microeconomics bus 1103">
+      <div class="course-top"><span class="num">06</span><span class="badge">MAJOR</span></div>
+      <h3>Microeconomics</h3>
+      <div class="code">BUS 1103 · 3 créditos</div>
+      <div class="chips"><span>Pré-requisito: BUS 1101</span></div>
+      <p>Analisa decisões de consumidores e empresas, produção, custos, estruturas de mercado e efeitos sobre o bem-estar.</p>
+      <details><summary><b>O que dominar</b></summary><ul><li>consumer behavior</li><li>production &amp; costs</li><li>market structures</li><li>supply &amp; demand</li><li>externalities</li><li>government role</li></ul></details>
+      <details><summary><b>Exemplo de registro no caderno</b></summary><div class="example">Registro: “Expliquei como uma mudança de preço altera demanda e dei um exemplo usando um produto real.”</div></details>
+      <label class="done"><input type="checkbox" class="course-check" data-course="6"> <span>Marcar como estudada/concluída</span></label>
+    </article>
+    <article class="course" data-name="social &amp; behavioral science ge">
+      <div class="course-top"><span class="num">07</span><span class="badge">GENERAL EDUCATION</span></div>
+      <h3>Social &amp; Behavioral Science</h3>
+      <div class="code">GE · 3 créditos</div>
+      <div class="chips"><span>Pré-requisito: Conforme curso escolhido</span></div>
+      <p>Segundo componente social/comportamental. A escolha final deve seguir o portal e o pathway individual da estudante.</p>
+      <details><summary><b>O que dominar</b></summary><ul><li>conceitos sociais</li><li>comportamento</li><li>análise crítica</li><li>aplicação prática</li></ul></details>
+      <details><summary><b>Exemplo de registro no caderno</b></summary><div class="example">Registro: “A ideia que mais preciso lembrar é ____. Minha aplicação prática é ____.”</div></details>
+      <label class="done"><input type="checkbox" class="course-check" data-course="7"> <span>Marcar como estudada/concluída</span></label>
+    </article>
+    <article class="course" data-name="macroeconomics bus 1104">
+      <div class="course-top"><span class="num">08</span><span class="badge">MAJOR</span></div>
+      <h3>Macroeconomics</h3>
+      <div class="code">BUS 1104 · 3 créditos</div>
+      <div class="chips"><span>Pré-requisito: BUS 1101</span></div>
+      <p>Estuda desempenho econômico agregado, PIB, crescimento, inflação, desemprego, comércio internacional e políticas monetária e fiscal.</p>
+      <details><summary><b>O que dominar</b></summary><ul><li>GDP</li><li>unemployment &amp; inflation</li><li>aggregate demand/supply</li><li>monetary policy</li><li>fiscal policy</li><li>international trade</li></ul></details>
+      <details><summary><b>Exemplo de registro no caderno</b></summary><div class="example">Registro: “Analisei um indicador macroeconômico e expliquei como ele poderia afetar uma empresa ou família.”</div></details>
+      <label class="done"><input type="checkbox" class="course-check" data-course="8"> <span>Marcar como estudada/concluída</span></label>
+    </article>
+    <article class="course" data-name="mathematical sciences ge">
+      <div class="course-top"><span class="num">09</span><span class="badge">GENERAL EDUCATION</span></div>
+      <h3>Mathematical Sciences</h3>
+      <div class="code">GE · 3 créditos</div>
+      <div class="chips"><span>Pré-requisito: Conforme curso escolhido</span></div>
+      <p>Componente quantitativo. O pathway oficial lista opções como College Algebra, Calculus e Introduction to Statistics.</p>
+      <details><summary><b>O que dominar</b></summary><ul><li>quantitative reasoning</li><li>algebra or statistics</li><li>interpreting data</li><li>problem solving</li></ul></details>
+      <details><summary><b>Exemplo de registro no caderno</b></summary><div class="example">Registro: “Fórmula/conceito: ____. Resolvi: ____. Onde errei: ____. Como conferir: ____.”</div></details>
+      <label class="done"><input type="checkbox" class="course-check" data-course="9"> <span>Marcar como estudada/concluída</span></label>
+    </article>
+    <article class="course" data-name="principles of marketing bus 2201">
+      <div class="course-top"><span class="num">10</span><span class="badge">PROCTORED</span></div>
+      <h3>Principles of Marketing</h3>
+      <div class="code">BUS 2201 · 3 créditos</div>
+      <div class="chips"><span>Pré-requisito: BUS 1101</span></div>
+      <p>Marketing, comportamento do consumidor, segmentação, posicionamento, produto, preço, canais, pesquisa e comunicação integrada.</p>
+      <details><summary><b>O que dominar</b></summary><ul><li>marketing strategy</li><li>consumer behavior</li><li>segmentation/targeting/positioning</li><li>branding &amp; lifecycle</li><li>channels</li><li>research</li><li>digital marketing</li></ul></details>
+      <details><summary><b>Exemplo de registro no caderno</b></summary><div class="example">Registro: “Criei um exemplo de segmentação para uma pequena empresa e defini público-alvo, posicionamento e proposta de valor.”</div></details>
+      <label class="done"><input type="checkbox" class="course-check" data-course="10"> <span>Marcar como estudada/concluída</span></label>
+    </article>
+    <article class="course" data-name="mathematical sciences ge">
+      <div class="course-top"><span class="num">11</span><span class="badge">GENERAL EDUCATION</span></div>
+      <h3>Mathematical Sciences</h3>
+      <div class="code">GE · 3 créditos</div>
+      <div class="chips"><span>Pré-requisito: Conforme curso escolhido</span></div>
+      <p>Segundo componente quantitativo. Escolha final conforme o plano individual no portal.</p>
+      <details><summary><b>O que dominar</b></summary><ul><li>data interpretation</li><li>quantitative reasoning</li><li>problem solving</li><li>application to business</li></ul></details>
+      <details><summary><b>Exemplo de registro no caderno</b></summary><div class="example">Registro: “O dado mais importante foi ____. Ele significa ____. Uma decisão que poderia ser tomada a partir dele seria ____.”</div></details>
+      <label class="done"><input type="checkbox" class="course-check" data-course="11"> <span>Marcar como estudada/concluída</span></label>
+    </article>
+    <article class="course" data-name="e-commerce bus 2202">
+      <div class="course-top"><span class="num">12</span><span class="badge">PROCTORED</span></div>
+      <h3>E-Commerce</h3>
+      <div class="code">BUS 2202 · 3 créditos</div>
+      <div class="chips"><span>Pré-requisito: BUS 1101</span></div>
+      <p>Modelos de negócio online, design digital, analytics, mercados digitais, pagamentos, redes sociais, segurança, privacidade e direito da internet.</p>
+      <details><summary><b>O que dominar</b></summary><ul><li>e-commerce models</li><li>digital design</li><li>web analytics</li><li>digital markets</li><li>payments</li><li>social media</li><li>security/privacy</li><li>internet law</li></ul></details>
+      <details><summary><b>Exemplo de registro no caderno</b></summary><div class="example">Registro: “Comparei dois modelos de e-commerce e identifiquei um risco de privacidade e uma métrica para acompanhar.”</div></details>
+      <label class="done"><input type="checkbox" class="course-check" data-course="12"> <span>Marcar como estudada/concluída</span></label>
+    </article>
+    <article class="course" data-name="values &amp; ethical reasoning ge">
+      <div class="course-top"><span class="num">13</span><span class="badge">GENERAL EDUCATION</span></div>
+      <h3>Values &amp; Ethical Reasoning</h3>
+      <div class="code">GE · 3 créditos</div>
+      <div class="chips"><span>Pré-requisito: Conforme curso escolhido</span></div>
+      <p>Componente de ética e raciocínio de valores. O pathway oficial lista Ethics and Social Responsibility como opção.</p>
+      <details><summary><b>O que dominar</b></summary><ul><li>ethical reasoning</li><li>responsibility</li><li>stakeholders</li><li>decision frameworks</li><li>business ethics</li></ul></details>
+      <details><summary><b>Exemplo de registro no caderno</b></summary><div class="example">Registro: “Situação ética: ____. Stakeholders: ____. Opções: ____. Decisão e justificativa: ____.”</div></details>
+      <label class="done"><input type="checkbox" class="course-check" data-course="13"> <span>Marcar como estudada/concluída</span></label>
+    </article>
+    <article class="course" data-name="principles of finance 1 bus 2203">
+      <div class="course-top"><span class="num">14</span><span class="badge">MAJOR</span></div>
+      <h3>Principles of Finance 1</h3>
+      <div class="code">BUS 2203 · 3 créditos</div>
+      <div class="chips"><span>Pré-requisito: BUS 1102</span></div>
+      <p>Fundamentos financeiros, mercados, juros, bancos, política monetária, risco-retorno e decisões de investimento.</p>
+      <details><summary><b>O que dominar</b></summary><ul><li>money &amp; financial system</li><li>interest rates</li><li>banking</li><li>financial regulation</li><li>monetary policy</li><li>risk-return</li><li>valuation</li></ul></details>
+      <details><summary><b>Exemplo de registro no caderno</b></summary><div class="example">Registro: “Resolvi um exemplo de juros e expliquei, em palavras, como a taxa altera o valor de uma decisão financeira.”</div></details>
+      <label class="done"><input type="checkbox" class="course-check" data-course="14"> <span>Marcar como estudada/concluída</span></label>
+    </article>
+    <article class="course" data-name="natural science &amp; technology ge">
+      <div class="course-top"><span class="num">15</span><span class="badge">GENERAL EDUCATION</span></div>
+      <h3>Natural Science &amp; Technology</h3>
+      <div class="code">GE · 3 créditos</div>
+      <div class="chips"><span>Pré-requisito: Conforme curso escolhido</span></div>
+      <p>Componente de ciências naturais/tecnologia. O pathway oficial lista Introduction to Biology, Biology 1 for Health Studies Majors e Environmental Sciences.</p>
+      <details><summary><b>O que dominar</b></summary><ul><li>scientific reasoning</li><li>evidence</li><li>systems</li><li>technology or environment</li></ul></details>
+      <details><summary><b>Exemplo de registro no caderno</b></summary><div class="example">Registro: “Pergunta científica: ____. Evidência: ____. Conclusão: ____. Limitação: ____.”</div></details>
+      <label class="done"><input type="checkbox" class="course-check" data-course="15"> <span>Marcar como estudada/concluída</span></label>
+    </article>
+    <article class="course" data-name="professional communication com 2001">
+      <div class="course-top"><span class="num">16</span><span class="badge">MAJOR / PROFESSIONAL</span></div>
+      <h3>Professional Communication</h3>
+      <div class="code">COM 2001 · 3 créditos</div>
+      <div class="chips"><span>Pré-requisito: UNIV 1001</span></div>
+      <p>Comunicação profissional escrita, oral e interpessoal, documentos de trabalho, apresentações, tecnologia e ética.</p>
+      <details><summary><b>O que dominar</b></summary><ul><li>emails &amp; reports</li><li>proposals</li><li>oral presentations</li><li>technology</li><li>interpersonal communication</li><li>ethics</li></ul></details>
+      <details><summary><b>Exemplo de registro no caderno</b></summary><div class="example">Registro: “Transformei uma ideia em um e-mail profissional com assunto, contexto, pedido claro e fechamento.”</div></details>
+      <label class="done"><input type="checkbox" class="course-check" data-course="16"> <span>Marcar como estudada/concluída</span></label>
+    </article>
+    <article class="course" data-name="humanities ge">
+      <div class="course-top"><span class="num">17</span><span class="badge">GENERAL EDUCATION</span></div>
+      <h3>Humanities</h3>
+      <div class="code">GE · 3 créditos</div>
+      <div class="chips"><span>Pré-requisito: Conforme curso escolhido</span></div>
+      <p>Componente de humanidades. Opções oficiais do pathway incluem Art History, Introduction to Philosophy e World Literature.</p>
+      <details><summary><b>O que dominar</b></summary><ul><li>critical reading</li><li>culture</li><li>philosophy/art/literature</li><li>interpretation</li></ul></details>
+      <details><summary><b>Exemplo de registro no caderno</b></summary><div class="example">Registro: “Ideia central: ____. Minha interpretação: ____. Evidência do texto/obra: ____.”</div></details>
+      <label class="done"><input type="checkbox" class="course-check" data-course="17"> <span>Marcar como estudada/concluída</span></label>
+    </article>
+    <article class="course" data-name="elective course elective">
+      <div class="course-top"><span class="num">18</span><span class="badge">ELECTIVE</span></div>
+      <h3>Elective Course</h3>
+      <div class="code">ELECTIVE · 3 créditos</div>
+      <div class="chips"><span>Pré-requisito: Conforme curso escolhido</span></div>
+      <p>Disciplina eletiva definida dentro das regras do programa e do pathway individual. Não escolher antes de confirmar no portal.</p>
+      <details><summary><b>O que dominar</b></summary><ul><li>career relevance</li><li>academic interest</li><li>business application</li><li>degree requirements</li></ul></details>
+      <details><summary><b>Exemplo de registro no caderno</b></summary><div class="example">Registro: “Por que escolhi esta eletiva: ____. Competência que quero desenvolver: ____. Aplicação: ____.”</div></details>
+      <label class="done"><input type="checkbox" class="course-check" data-course="18"> <span>Marcar como estudada/concluída</span></label>
+    </article>
+    <article class="course" data-name="civilization studies, culture &amp; belief ge">
+      <div class="course-top"><span class="num">19</span><span class="badge">GENERAL EDUCATION</span></div>
+      <h3>Civilization Studies, Culture &amp; Belief</h3>
+      <div class="code">GE · 3 créditos</div>
+      <div class="chips"><span>Pré-requisito: Conforme curso escolhido</span></div>
+      <p>Componente de civilização, cultura e crenças. O pathway oficial lista Greek and Roman Civilization.</p>
+      <details><summary><b>O que dominar</b></summary><ul><li>civilizations</li><li>culture</li><li>belief systems</li><li>historical context</li><li>comparison</li></ul></details>
+      <details><summary><b>Exemplo de registro no caderno</b></summary><div class="example">Registro: “Sociedade estudada: ____. Ideia cultural importante: ____. Comparação com outro contexto: ____.”</div></details>
+      <label class="done"><input type="checkbox" class="course-check" data-course="19"> <span>Marcar como estudada/concluída</span></label>
+    </article>
+    <article class="course" data-name="multinational management bus 2207">
+      <div class="course-top"><span class="num">20</span><span class="badge">MAJOR</span></div>
+      <h3>Multinational Management</h3>
+      <div class="code">BUS 2207 · 3 créditos</div>
+      <div class="chips"><span>Pré-requisito: BUS 2201</span></div>
+      <p>Gestão multinacional em ambientes globais: planejamento, liderança, RH internacional, cultura, expansão, riscos, ética e responsabilidade social.</p>
+      <details><summary><b>O que dominar</b></summary><ul><li>global economy</li><li>national culture</li><li>cultural sensitivity</li><li>business communication</li><li>international HR</li><li>expansion strategy</li><li>risk</li><li>CSR</li></ul></details>
+      <details><summary><b>Exemplo de registro no caderno</b></summary><div class="example">Registro: “Analisei um risco cultural em uma expansão internacional e propus uma forma de reduzir o risco.”</div></details>
+      <label class="done"><input type="checkbox" class="course-check" data-course="20"> <span>Marcar como estudada/concluída</span></label>
+    </article></div>
 </section>
 
-<section id="notas">
-
-  <div class="card">
-    <h2>Notas</h2>
-
-    <input id="notaDisciplina" placeholder="Disciplina">
-
-    <input id="notaValor" placeholder="Nota">
-
-    <button class="primary" onclick="addNota()">
-      Guardar nota
-    </button>
-
-    <div id="listaNotas"></div>
-  </div>
-
+<section class="section" id="financeiro">
+<div class="eyebrow">07 · Dinheiro</div><h2>Planejamento financeiro da Ester</h2>
+<div class="stats"><div class="stat"><b>US$100</b><span>por curso · desconto informado</span></div><div class="stat"><b>US$2.000</b><span>20 cursos × US$100</span></div><div class="stat"><b>US$2.060</b><span>+ US$60 aplicação, se aplicável</span></div></div>
+<div class="callout"><b>Este é o planejamento da Ester, não a tabela oficial.</b> A UoPeople publica atualmente US$180 de assessment por curso e US$60 de application fee para graduação. O valor de <b>US$100 por disciplina</b> é o desconto que você informou e deve ser confirmado no portal/condições da oferta.</div>
+<h3>Reserva inteligente</h3>
+<ul><li>Separar o valor de cada disciplina antes do início do term.</li><li>Manter uma pequena reserva para eventual repetição de curso ou taxa aplicável.</li><li>Guardar comprovantes de pagamento.</li><li>Não assumir que uma promoção futura terá as mesmas condições.</li></ul>
 </section>
 
-<section id="anotacoes">
-
-  <div class="card">
-    <h2>Anotações</h2>
-
-    <input id="tituloNota" placeholder="Título">
-
-    <textarea id="textoNota" placeholder="Escreva aqui..."></textarea>
-
-    <button class="primary" onclick="addAnotacao()">
-      Guardar anotação
-    </button>
-
-    <div id="listaAnotacoes"></div>
-  </div>
-
+<section class="section">
+<div class="eyebrow">08 · Método acadêmico</div><h2>Checklist de cada assignment</h2>
+<div class="week">
+<div class="slot"><b>1 · Entender</b><span>Leia o prompt e o rubric. Circule os verbos: explain, compare, analyze, discuss…</span></div>
+<div class="slot"><b>2 · Pesquisar</b><span>Use o Learning Guide e as fontes indicadas. Anote autor, ideia e evidência.</span></div>
+<div class="slot"><b>3 · Estruturar</b><span>Tese → argumentos → evidências → aplicação → conclusão.</span></div>
+<div class="slot"><b>4 · Escrever</b><span>Primeiro clareza. Depois gramática, citações e formatação.</span></div>
+<div class="slot"><b>5 · Revisar</b><span>Confira cada item do rubric antes do upload.</span></div>
+<div class="slot"><b>6 · Entregar</b><span>Confirme o upload e registre a data. Não deixe a última hora decidir a nota.</span></div>
+</div>
 </section>
 
-</main>
+<section class="section">
+<div class="eyebrow">09 · Provas e notas</div><h2>Meta de desempenho</h2>
+<table><tr><th>Indicador</th><th>Meta pessoal</th><th>Registro</th></tr>
+<tr><td>Assignments</td><td>100% entregues</td><td>____</td></tr>
+<tr><td>Discussion</td><td>100% no prazo</td><td>____</td></tr>
+<tr><td>Peer assessment</td><td>Responsável e completo</td><td>____</td></tr>
+<tr><td>Final exam</td><td>Revisão ativa</td><td>____</td></tr>
+<tr><td>CGPA</td><td>≥ 3,00 como meta de segurança</td><td>____</td></tr></table>
+<div class="callout"><b>Estratégia:</b> não estudar apenas relendo. Depois de cada unidade, fechar o material e explicar o conceito com as próprias palavras.</div>
+</section>
 
-<footer>
-  Ester — UoPeople 2026
-</footer>
+<section class="section">
+<div class="eyebrow">10 · Próximos passos</div><h2>Antes de começar</h2>
+<ol><li>Confirmar que a proficiência em inglês está satisfeita.</li><li>Confirmar documentos de ensino médio e demais requisitos.</li><li>Concluir/acompanhar Foundations conforme orientação da UoPeople.</li><li>Abrir o Degree Audit e salvar o pathway individual.</li><li>Confirmar quais cursos de General Education aparecem para a Ester.</li><li>Confirmar a oferta/desconto de US$100 por curso por escrito.</li><li>Bloquear 30–34 horas semanais no calendário.</li><li>Preparar uma pasta digital para cada term.</li></ol>
+<div class="actions"><button class="btn" id="print">Imprimir / salvar PDF</button><button class="btn alt" id="reset">Zerar progresso</button></div>
+</section>
 
+<section class="section" id="fontes">
+<div class="eyebrow">11 · Fontes sérias</div><h2>Pesquisa e verificação</h2>
+<p>Este caderno foi montado priorizando <b>fontes primárias e órgãos de acreditação</b>. Quando houver conflito entre este material e o portal da universidade, prevalecem o catálogo e o pathway individual vigentes.</p>
+
+<div class="sources">
+<div class="source-line">• <a href="https://www.uopeople.edu/programs/online-associates/business-administration/" target="_blank" rel="noopener">UoPeople — página oficial do ASBA</a></div>
+<div class="source-line">• <a href="https://catalog.uopeople.edu/ug_term1_item/business-administration/associate-of-science-in-business-administration-as-ba" target="_blank" rel="noopener">UoPeople Catalog — AS-BA 2025/26</a></div>
+<div class="source-line">• <a href="https://files.uopeople.edu/guide/learning_pathway_ENG.pdf" target="_blank" rel="noopener">UoPeople — Learning Pathways</a></div>
+<div class="source-line">• <a href="https://www.uopeople.edu/academic-calendar/" target="_blank" rel="noopener">UoPeople — Academic Calendar</a></div>
+<div class="source-line">• <a href="https://www.wscuc.org/institutions/university-of-the-people/" target="_blank" rel="noopener">WSCUC — University of the People</a></div>
+<div class="source-line">• <a href="https://www.wscuc.org/program/associate-of-science-in-business-administration/" target="_blank" rel="noopener">WSCUC — AS in Business Administration</a></div>
+<div class="source-line">• <a href="https://www.chea.org/university-people" target="_blank" rel="noopener">CHEA — University of the People</a></div>
+</div>
+
+<div class="callout"><b>Leitura recomendada:</b> comece pela página oficial do ASBA, depois confira o catálogo 2025/26, o Learning Pathway, o calendário e a página da WSCUC. A CHEA funciona como verificação adicional da acreditação institucional.</div>
+</section>
+
+</div></main>
+<footer><div class="wrap"><b>ESTER MOREIRA · 2026</b><br>University of the People · Associate of Science in Business Administration<br><br>Material pessoal de planejamento acadêmico. Dados de matrícula, valores, disponibilidade, requisitos e calendário devem ser confirmados no portal oficial.</div></footer>
 <script>
-
-function get(key){
-  return JSON.parse(localStorage.getItem(key) || "[]");
+const KEY="ester_uopeople_2026_v2";
+const state=JSON.parse(localStorage.getItem(KEY)||'{}');
+function save(){localStorage.setItem(KEY,JSON.stringify(state));updateProgress()}
+function updateProgress(){
+ const cs=[...document.querySelectorAll('.course-check')], ts=[...document.querySelectorAll('.term-check')];
+ cs.forEach(x=>x.checked=!!state.courses?.[x.dataset.course]);ts.forEach(x=>x.checked=!!state.terms?.[x.dataset.term]);
+ const done=Object.values(state.courses||{}).filter(Boolean).length;
+ const pct=Math.round(done/20*100);
+ document.querySelectorAll('[data-progress]').forEach(x=>x.style.width=pct+'%');
+ document.querySelectorAll('[data-progress-text]').forEach(x=>x.textContent=done+'/20');
 }
-
-function save(key,data){
-  localStorage.setItem(key,JSON.stringify(data));
-}
-
-function show(id,btn){
-  document.querySelectorAll("section").forEach(s=>s.classList.remove("active"));
-  document.getElementById(id).classList.add("active");
-
-  document.querySelectorAll("nav button").forEach(b=>b.classList.remove("active"));
-  btn.classList.add("active");
-}
-
-function addDisciplina(){
-  const input=document.getElementById("disciplinaInput");
-  if(!input.value.trim()) return;
-
-  const data=get("disciplinas");
-  data.push(input.value.trim());
-  save("disciplinas",data);
-
-  input.value="";
-  render();
-}
-
-function addTarefa(){
-  const texto=document.getElementById("tarefaInput");
-  const prazo=document.getElementById("prazoInput");
-
-  if(!texto.value.trim()) return;
-
-  const data=get("tarefas");
-
-  data.push({
-    texto:texto.value.trim(),
-    prazo:prazo.value
-  });
-
-  save("tarefas",data);
-
-  texto.value="";
-  prazo.value="";
-  render();
-}
-
-function addNota(){
-  const disciplina=document.getElementById("notaDisciplina");
-  const valor=document.getElementById("notaValor");
-
-  if(!disciplina.value.trim()) return;
-
-  const data=get("notas");
-
-  data.push({
-    disciplina:disciplina.value.trim(),
-    valor:valor.value.trim()
-  });
-
-  save("notas",data);
-
-  disciplina.value="";
-  valor.value="";
-  render();
-}
-
-function addAnotacao(){
-  const titulo=document.getElementById("tituloNota");
-  const texto=document.getElementById("textoNota");
-
-  if(!texto.value.trim()) return;
-
-  const data=get("anotacoes");
-
-  data.push({
-    titulo:titulo.value.trim() || "Anotação",
-    texto:texto.value.trim()
-  });
-
-  save("anotacoes",data);
-
-  titulo.value="";
-  texto.value="";
-  render();
-}
-
-function render(){
-
-  const disciplinas=get("disciplinas");
-  const tarefas=get("tarefas");
-  const notas=get("notas");
-  const anotacoes=get("anotacoes");
-
-  document.getElementById("totalTarefas").textContent=tarefas.length;
-  document.getElementById("totalNotas").textContent=notas.length;
-
-  document.getElementById("listaDisciplinas").innerHTML=
-    disciplinas.map((x,i)=>
-      `<div class="item"><strong>${escapeHTML(x)}</strong></div>`
-    ).join("");
-
-  document.getElementById("listaTarefas").innerHTML=
-    tarefas.map(x=>
-      `<div class="item">
-        <strong>${escapeHTML(x.texto)}</strong>
-        ${x.prazo ? `<div class="small">Prazo: ${escapeHTML(x.prazo)}</div>` : ""}
-      </div>`
-    ).join("");
-
-  document.getElementById("listaNotas").innerHTML=
-    notas.map(x=>
-      `<div class="item">
-        <strong>${escapeHTML(x.disciplina)}</strong>
-        <div>Nota: ${escapeHTML(x.valor)}</div>
-      </div>`
-    ).join("");
-
-  document.getElementById("listaAnotacoes").innerHTML=
-    anotacoes.map(x=>
-      `<div class="item">
-        <strong>${escapeHTML(x.titulo)}</strong>
-        <div>${escapeHTML(x.texto)}</div>
-      </div>`
-    ).join("");
-}
-
-function escapeHTML(text){
-  return String(text)
-    .replaceAll("&","&amp;")
-    .replaceAll("<","&lt;")
-    .replaceAll(">","&gt;")
-    .replaceAll('"',"&quot;")
-    .replaceAll("'","&#039;");
-}
-
-render();
-
+document.addEventListener('change',e=>{
+ if(e.target.classList.contains('course-check')){state.courses=state.courses||{};state.courses[e.target.dataset.course]=e.target.checked;save()}
+ if(e.target.classList.contains('term-check')){state.terms=state.terms||{};state.terms[e.target.dataset.term]=e.target.checked;save()}
+});
+const search=document.querySelector('#courseSearch');
+search?.addEventListener('input',()=>{
+ const q=search.value.toLowerCase().trim();
+ document.querySelectorAll('.course').forEach(c=>c.style.display=(!q||c.dataset.name.includes(q))?'':'none');
+});
+document.querySelector('#reset')?.addEventListener('click',()=>{localStorage.removeItem(KEY);location.reload()});
+document.querySelector('#print')?.addEventListener('click',()=>window.print());
+updateProgress();
 </script>
-
-</body>
-</html>
+</body></html>
