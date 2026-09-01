@@ -1,1 +1,101 @@
-const KEY='ester-uopeople-2026-v2';const state=JSON.parse(localStorage.getItem(KEY)||'{}');state.courses=state.courses||{};state.tasks=state.tasks||[];state.checkins=state.checkins||[];state.dev=state.dev||[];state.days=state.days||{};let courseData=null,timerSec=1500,timerId=null;const $=id=>document.getElementById(id);function save(){localStorage.setItem(KEY,JSON.stringify(state))}function today(){return new Date().toISOString().slice(0,10)}function fmtDate(s){if(!s)return'A confirmar';return new Date(s+'T12:00:00').toLocaleDateString('pt-BR',{day:'2-digit',month:'2-digit',year:'numeric'})}document.querySelectorAll('[data-tab]').forEach(b=>b.onclick=()=>showTab(b.dataset.tab));function showTab(id){document.querySelectorAll('.tab').forEach(x=>x.hidden=true);$(id).hidden=false;document.querySelectorAll('[data-tab]').forEach(b=>b.classList.toggle('active',b.dataset.tab===id));window.scrollTo({top:0,behavior:'smooth'})}showTab('overview');$('todayLabel').textContent=fmtDate(today());fetch('data/courses.json').then(r=>r.json()).then(d=>{courseData=d;renderAll()}).catch(e=>console.error(e));function renderAll(){renderCourses();renderTerms();renderRoutine();renderTasks();renderSources();renderHistory();renderDev();updateStats();if(state.week){$('weekGoal').value=state.week.goal||'';$('weekResults').value=state.week.results||''}}function renderCourses(){if(!courseData)return;const q=($('courseSearch')?.value||'').toLowerCase().trim(),f=$('courseFilter')?.value||'all';const arr=courseData.courses.filter(c=>{const text=(c.code+' '+c.name+' '+c.type+' '+c.objective).toLowerCase();const qok=!q||text.includes(q);const fok=f==='all'||(f==='Major'&&c.type.includes('Major'))||(f==='General'&&c.type.includes('General Education'))||(f==='proctored'&&c.proctored);return qok&&fok});$('courseList').innerHTML=arr.length?arr.map(c=>{const done=!!state.courses[c.order];return `<article class="course ${done?'done':''}"><div class="row between"><div><b>${c.order}. ${c.code}</b> · ${c.name}</div><input aria-label="Marcar ${c.name} como concluída" class="check" type="checkbox" ${done?'checked':''} onchange="toggleCourse(${c.order})"></div><div class="course-meta"><span class="badge">Term ${c.term}</span><span class="badge">${c.credits} créditos</span><span class="badge">${c.type}</span>${c.proctored?'<span class="badge red">Proctored</span>':''}${c.status==='verified'?'<span class="badge">Fonte oficial</span>':''}</div><div class="course-detail"><p><b>Pré-requisito:</b> ${c.prereq}</p><p><b>O que a matéria aborda:</b> ${c.description}</p><p><b>Objetivo resumido:</b> ${c.objective}</p></div></article>`}).join(''):'<p class="muted">Nenhuma disciplina encontrada.</p>'}function toggleCourse(n){state.courses[n]=!state.courses[n];if(!state.courses[n])delete state.courses[n];save();renderAll()}function resetCourses(){if(confirm('Limpar todas as marcações de cursos?')){state.courses={};save();renderAll()}}function updateStats(){const done=Object.values(state.courses).filter(Boolean).length;$('doneCourses').textContent=done;$('doneCredits').textContent=done*3;$('courseBar').style.width=(done/20*100)+'%';$('progressText').textContent=`${done} de 20 cursos marcados`;$('taskDone').textContent=state.tasks.filter(t=>t.done).length;let streak=0,d=new Date();for(let i=0;i<366;i++){let k=d.toISOString().slice(0,10);if(state.days[k]){streak++;d.setDate(d.getDate()-1)}else break}$('streak').textContent=streak}function renderTerms(){if(!courseData)return;const byOrder=Object.fromEntries(courseData.courses.map(c=>[c.order,c]));$('termList').innerHTML=courseData.terms.map(t=>{const items=t.courses.map(n=>{const c=byOrder[n];const done=!!state.courses[n];return `<div class="term-course"><div class="row between"><span><b>${c.code}</b><br>${c.name}</span><input class="check" type="checkbox" ${done?'checked':''} onchange="toggleCourse(${n})"></div><span class="small muted">${c.credits} créditos · ${c.proctored?'proctored':'não proctored'}</span></div>`}).join('');const dates=t.start?`${fmtDate(t.start)} → ${fmtDate(t.end)}`:'A confirmar no calendário oficial';return `<div class="term"><div class="term-grid"><div class="term-date"><b>${t.label}</b><span>${dates}</span><p class="small muted">${t.note}</p></div><div class="term-courses">${items}</div></div></div>`}).join('')}const routine=[['07:00','Acordar + água + higiene','Corpo','Comece pequeno; não precisa produzir imediatamente.'],['07:30','Tempo devocional','Devocional','Leitura curta + oração + uma aplicação.'],['08:00','Café da manhã','Corpo','Alimentar-se antes de exigir concentração.'],['09:00','Foco acadêmico 1','Estudo','Uma tarefa concreta por 15–45 min.'],['10:00','Pausa + movimento','Saúde','Levante, caminhe ou alongue conforme puder.'],['10:30','Foco acadêmico 2','Estudo','Leitura, fórum, escrita ou revisão.'],['12:30','Almoço + descanso','Corpo','Pausa real, sem transformar descanso em culpa.'],['15:00','Bloco leve','Vida','Revisão, organização ou uma tarefa curta.'],['18:00','Desacelerar','Mente','Fechar pendências e preparar amanhã.'],['21:30','Encerramento','Mente','Anotar o próximo passo e parar de estudar.']];function renderRoutine(){$('routineList').innerHTML=routine.map((r,i)=>`<div class="course"><div class="row between"><b>${r[0]} · ${r[1]}</b><span class="badge">${r[2]}</span></div><p class="small muted">${r[3]}</p><label><input type="checkbox" ${state.days[today()+'-'+i]?'checked':''} onchange="toggleRoutine('${today()}-${i}')"> feito</label></div>`).join('')}function toggleRoutine(k){state.days[k]=!state.days[k];if(!state.days[k])delete state.days[k];save();renderRoutine();updateStats()}function saveWeek(){state.week={goal:$('weekGoal').value,results:$('weekResults').value};save();$('weekSaved').textContent='Salvo neste dispositivo.'}function addTask(){let text=$('taskInput').value.trim();if(!text)return;state.tasks.unshift({id:Date.now(),text,cat:$('taskCat').value,done:false});$('taskInput').value='';save();renderTasks();updateStats()}function toggleTask(id){let t=state.tasks.find(x=>x.id===id);if(t)t.done=!t.done;save();renderTasks();updateStats()}function deleteTask(id){state.tasks=state.tasks.filter(x=>x.id!==id);save();renderTasks();updateStats()}function quickTask(){showTab('tasks');setTimeout(()=>$('taskInput').focus(),150)}function renderTasks(){$('taskList').innerHTML=state.tasks.length?state.tasks.map(t=>`<div class="course"><div class="row between"><label style="margin:0"><input class="check" type="checkbox" ${t.done?'checked':''} onchange="toggleTask(${t.id})"> ${escapeHtml(t.text)}</label><button class="btn ghost small" onclick="deleteTask(${t.id})">excluir</button></div><span class="badge">${escapeHtml(t.cat)}</span></div>`).join(''):'<p class="muted">Nenhuma tarefa. Adicione uma só para começar.</p>'}function escapeHtml(s){return String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;')}function setTimer(min){timerSec=min*60;renderTimer()}function renderTimer(){$('timer').textContent=`${String(Math.floor(timerSec/60)).padStart(2,'0')}:${String(timerSec%60).padStart(2,'0')}`}function startTimer(){if(timerId)return;timerId=setInterval(()=>{if(timerSec<=0){clearInterval(timerId);timerId=null;alert('Bloco concluído. Respire e escolha conscientemente o próximo passo.');return}timerSec--;renderTimer()},1000)}function pauseTimer(){clearInterval(timerId);timerId=null}function resetTimer(){pauseTimer();timerSec=1500;renderTimer()}function saveCheckin(){state.checkins.unshift({date:today(),energy:+$('energy').value,overload:+$('overload').value,care:$('care').value});state.checkins=state.checkins.slice(0,30);save();$('checkSaved').textContent='Check-in registrado.';renderHistory()}function renderHistory(){$('checkHistory').innerHTML=state.checkins.length?'<table><tr><th>Data</th><th>Energia</th><th>Sobrecarga</th><th>Cuidado</th></tr>'+state.checkins.map(x=>`<tr><td>${fmtDate(x.date)}</td><td>${x.energy}/10</td><td>${x.overload}/10</td><td>${escapeHtml(x.care)}</td></tr>`).join('')+'</table>':'<p class="muted">Ainda não há registros.</p>'}function saveDev(){let ref=$('bibleRef').value.trim(),note=$('devNote').value.trim();if(!ref&&!note)return;state.dev.unshift({date:today(),ref,note});state.dev=state.dev.slice(0,30);save();$('bibleRef').value='';$('devNote').value='';$('devSaved').textContent='Reflexão salva neste dispositivo.';renderDev()}function renderDev(){$('devHistory').innerHTML=state.dev.length?state.dev.map(x=>`<div class="course"><b>${fmtDate(x.date)} · ${escapeHtml(x.ref||'Reflexão')}</b><p>${escapeHtml(x.note||'')}</p></div>`).join(''):'<p class="muted">Nenhuma reflexão registrada.</p>'}function renderSources(){if(!courseData)return;$('sourcesList').innerHTML=courseData.sources.map(s=>`<div class="source"><a href="${s.url}" target="_blank" rel="noopener">${s.title}</a><p class="small muted">${s.use}</p></div>`).join('')}renderTimer();
+
+const $ = s => document.querySelector(s);
+const $$ = s => [...document.querySelectorAll(s)];
+const KEY = "ester-uop-v2";
+
+const state = JSON.parse(localStorage.getItem(KEY) || "{}");
+state.done = state.done || {};
+state.notes = state.notes || {};
+state.alerts = state.alerts || [];
+state.habits = state.habits || {};
+state.devotional = state.devotional || {};
+state.profile = state.profile || {name:"Ester Moreira", program:"University of the People — Computer Science", goal:"60 créditos • 20 disciplinas • 10 termos"};
+
+const courses = window.COURSES;
+
+function save(){localStorage.setItem(KEY, JSON.stringify(state));}
+function esc(v){return String(v??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]));}
+
+function progress(){
+  const total=courses.length, done=courses.filter(c=>state.done[c.code]).length;
+  return {done,total,pct:Math.round(done/total*100),credits:done*3};
+}
+
+function render(){
+  const p=progress();
+  $("#progressText").textContent=`${p.done}/${p.total} disciplinas • ${p.credits}/60 créditos`;
+  $("#progressBar").style.width=p.pct+"%";
+  renderCourses();
+  renderTerms();
+  renderAlerts();
+  $("#today").textContent=new Intl.DateTimeFormat("pt-BR",{dateStyle:"full"}).format(new Date());
+}
+function renderCourses(){
+  const q=($("#courseSearch").value||"").toLowerCase();
+  const filter=$("#courseFilter").value;
+  const list=courses.filter(c=>(!q||`${c.code} ${c.name} ${c.objective}`.toLowerCase().includes(q))&&(filter==="Todas"||c.type===filter));
+  $("#courseList").innerHTML=list.map(c=>`
+    <article class="course ${state.done[c.code]?"is-done":""}">
+      <div class="courseTop"><span class="code">${esc(c.code)}</span><span>${c.credits} créditos</span></div>
+      <h3>${esc(c.name)}</h3>
+      <div class="meta">Termo ${c.term} • ${esc(c.type)}</div>
+      <p><b>Objetivo:</b> ${esc(c.objective)}</p>
+      ${c.description?`<p class="muted">${esc(c.description)}</p>`:""}
+      <div class="courseActions">
+        <button class="primary" data-done="${esc(c.code)}">${state.done[c.code]?"✓ Concluída":"Marcar como concluída"}</button>
+        <button data-note="${esc(c.code)}">📝 Anotação</button>
+      </div>
+    </article>`).join("") || `<div class="empty">Nenhuma disciplina encontrada.</div>`;
+  $$("[data-done]").forEach(b=>b.onclick=()=>{state.done[b.dataset.done]=!state.done[b.dataset.done];save();render();});
+  $$("[data-note]").forEach(b=>b.onclick=()=>openNote(b.dataset.note));
+}
+function renderTerms(){
+  $("#terms").innerHTML=Array.from({length:10},(_,i)=>i+1).map(t=>{
+    const cs=courses.filter(c=>c.term===t), done=cs.filter(c=>state.done[c.code]).length;
+    return `<section class="term"><div class="termHead"><div><span class="eyebrow">TERMO ${String(t).padStart(2,"0")}</span><h3>${done}/${cs.length} concluídas</h3></div><span class="pill">${cs.length*3} créditos</span></div>
+      <div class="termCourses">${cs.map(c=>`<button class="${state.done[c.code]?"checked":""}" data-jump="${esc(c.code)}"><span>${state.done[c.code]?"✓":"○"}</span><span><b>${esc(c.code)}</b><br>${esc(c.name)}</span></button>`).join("")}</div></section>`;
+  }).join("");
+  $$("[data-jump]").forEach(b=>b.onclick=()=>{$("#disciplinas").scrollIntoView({behavior:"smooth"});$("#courseSearch").value=b.dataset.jump;renderCourses();});
+}
+function renderAlerts(){
+  $("#alertList").innerHTML=state.alerts.map((a,i)=>`<div class="alert"><div><b>${esc(a.title)}</b><small>${esc(a.date||"Sem data")}</small></div><button data-del-alert="${i}">×</button></div>`).join("") || `<div class="empty">Nenhum alerta cadastrado.</div>`;
+  $$("[data-del-alert]").forEach(b=>b.onclick=()=>{state.alerts.splice(+b.dataset.delAlert,1);save();renderAlerts();});
+}
+function openNote(code){
+  const value=prompt(`Anotação — ${code}`,state.notes[code]||"");
+  if(value!==null){state.notes[code]=value;save();}
+}
+function nav(id){
+  $$(".page").forEach(x=>x.classList.remove("active"));
+  $("#"+id).classList.add("active");
+  $$(".navBtn").forEach(x=>x.classList.toggle("active",x.dataset.page===id));
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+$$(".navBtn").forEach(b=>b.onclick=()=>nav(b.dataset.page));
+$("#courseSearch").oninput=renderCourses;
+$("#courseFilter").onchange=renderCourses;
+
+$("#addAlert").onclick=()=>{
+  const title=prompt("Título do alerta");
+  if(!title)return;
+  const date=prompt("Data ou horário (opcional)");
+  state.alerts.push({title,date});save();renderAlerts();
+};
+
+const devKey=new Date().toISOString().slice(0,10);
+$("#devSave").onclick=()=>{state.devotional[devKey]={verse:$("#devVerse").value,reflection:$("#devReflection").value,prayer:$("#devPrayer").value};save();toast("Devocional salvo.");};
+function loadDev(){const d=state.devotional[devKey]||{};$("#devVerse").value=d.verse||"";$("#devReflection").value=d.reflection||"";$("#devPrayer").value=d.prayer||"";}
+loadDev();
+
+$$("[data-habit]").forEach(b=>b.onclick=()=>{state.habits[b.dataset.habit]=!state.habits[b.dataset.habit];b.classList.toggle("done",!!state.habits[b.dataset.habit]);save();});
+$("#clearProgress").onclick=()=>{if(confirm("Limpar o progresso das disciplinas?")){state.done={};save();render();}};
+
+let timer=null, seconds=25*60;
+function drawTimer(){let m=Math.floor(seconds/60),s=seconds%60;$("#timer").textContent=`${String(m).padStart(2,"0")}:${String(s).padStart(2,"0")}`;}
+$("#timerStart").onclick=()=>{if(timer)return;timer=setInterval(()=>{seconds--;drawTimer();if(seconds<=0){clearInterval(timer);timer=null;alert("Tempo concluído! Faça uma pausa.");seconds=25*60;drawTimer();}},1000);};
+$("#timerPause").onclick=()=>{clearInterval(timer);timer=null;};
+$("#timerReset").onclick=()=>{clearInterval(timer);timer=null;seconds=25*60;drawTimer();};
+drawTimer();
+
+function toast(msg){const t=$("#toast");t.textContent=msg;t.classList.add("show");setTimeout(()=>t.classList.remove("show"),1800);}
+render();

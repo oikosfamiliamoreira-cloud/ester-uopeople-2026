@@ -1,24 +1,17 @@
-# ESTER-UOPEOPLE-2026 — Caderno Acadêmico
+# Ester UoPeople App v2
 
-Versão final do protótipo para GitHub Pages.
+Protótipo PWA mobile-first para GitHub Pages.
 
-## Incluído
-- Faculdade e programa AS-BA
-- 20 disciplinas em sequência de referência do catálogo UoPeople 2025/26
-- Nome, código, créditos, pré-requisito, descrição e objetivo resumido de cada disciplina
-- Plano de 10 termos
-- Datas oficiais de 2026-27 e A confirmar para períodos futuros
-- Progresso, tarefas e modo foco
-- Rotina flexível para estudo, corpo, mente e devocional
-- Check-in de energia/sobrecarga
-- Fontes oficiais
+Inclui:
+- Faculdade / UoPeople
+- 20 disciplinas em 10 termos
+- descrição e objetivo das disciplinas
+- progresso e créditos
+- rotina e Pomodoro
+- devocional
+- saúde física, mental e emocional
+- apoios
+- alertas
+- dados salvos localmente no dispositivo
 
-## Importante
-A sequência é uma referência baseada no catálogo. A Learning Pathway individual e a disponibilidade das disciplinas devem ser confirmadas no Portal UoPeople. O catálogo também pode ser atualizado.
-
-## Publicação
-1. Descompacte este ZIP.
-2. Envie os arquivos e a pasta `data` para a raiz da branch `main`.
-3. Não envie apenas o ZIP para o GitHub Pages.
-4. Mantenha `index.html` na raiz.
-5. Aguarde o GitHub Pages reconstruir o site.
+A base curricular inicial usa o catálogo UoPeople 2025/26 e deve ser conferida contra a Learning Pathway individual da estudante.
