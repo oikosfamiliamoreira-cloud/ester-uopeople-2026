@@ -1,305 +1,479 @@
 {
-  "updated": "2026-08-31",
-  "program": "Associate of Science in Business Administration (AS-BA)",
-  "credits_goal": 60,
-  "courses_goal": 20,
-  "courses": [
-    {
-      "order": 1,
-      "code": "UNIV 1001",
-      "name": "Online Education Strategies",
-      "type": "General Education",
-      "credits": 3,
-      "prereq": "None",
-      "status": "verified",
-      "source": "UoPeople 2025/26 Catalog — General Education Requirements for Associate’s Degrees"
-    },
-    {
-      "order": 2,
-      "code": "BUS 1101",
-      "name": "Principles of Business Management",
-      "type": "Major / prerequisite",
-      "credits": 3,
-      "prereq": "None",
-      "status": "verified",
-      "source": "UoPeople 2025/26 Catalog — AS-BA"
-    },
-    {
-      "order": 3,
-      "code": "ENGL 1102",
-      "name": "English Composition 2",
-      "type": "General Education",
-      "credits": 3,
-      "prereq": "None",
-      "status": "verified",
-      "source": "UoPeople 2025/26 Catalog — General Education Requirements for Associate’s Degrees"
-    },
-    {
-      "order": 4,
-      "code": "BUS 1102",
-      "name": "Basic Accounting",
-      "type": "Major",
-      "credits": 3,
-      "prereq": "BUS 1101",
-      "status": "verified",
-      "source": "UoPeople 2025/26 Catalog — AS-BA"
-    },
-    {
-      "order": 5,
-      "code": "GE-SBS",
-      "name": "Social & Behavioral Sciences — choose one",
-      "type": "General Education",
-      "credits": 3,
-      "prereq": "None",
-      "status": "verified",
-      "source": "UoPeople 2025/26 Catalog — GE options"
-    },
-    {
-      "order": 6,
-      "code": "BUS 1103",
-      "name": "Microeconomics",
-      "type": "Major",
-      "credits": 3,
-      "prereq": "BUS 1101",
-      "status": "verified",
-      "source": "UoPeople 2025/26 Catalog — AS-BA"
-    },
-    {
-      "order": 7,
-      "code": "GE-SBS-2",
-      "name": "Social & Behavioral Sciences — second course",
-      "type": "General Education",
-      "credits": 3,
-      "prereq": "None",
-      "status": "verified",
-      "source": "UoPeople 2025/26 Catalog — AS-BA learning pathway example / GE requirements"
-    },
-    {
-      "order": 8,
-      "code": "BUS 1104",
-      "name": "Macroeconomics",
-      "type": "Major",
-      "credits": 3,
-      "prereq": "BUS 1101",
-      "status": "verified",
-      "source": "UoPeople 2025/26 Catalog — AS-BA"
-    },
-    {
-      "order": 9,
-      "code": "GE-MATH-1",
-      "name": "Quantitative Reasoning — choose one",
-      "type": "General Education",
-      "credits": 3,
-      "prereq": "See course prerequisite",
-      "status": "verified",
-      "source": "UoPeople 2025/26 Catalog — GE requirements"
-    },
-    {
-      "order": 10,
-      "code": "BUS 2201",
-      "name": "Principles of Marketing",
-      "type": "Major",
-      "credits": 3,
-      "prereq": "BUS 1101",
-      "status": "verified",
-      "source": "UoPeople 2025/26 Catalog — AS-BA"
-    },
-    {
-      "order": 11,
-      "code": "GE-MATH-2",
-      "name": "Quantitative Reasoning — second course",
-      "type": "General Education",
-      "credits": 3,
-      "prereq": "See course prerequisite",
-      "status": "verified",
-      "source": "UoPeople 2025/26 Catalog — GE requirements"
-    },
-    {
-      "order": 12,
-      "code": "BUS 2202",
-      "name": "E-Commerce",
-      "type": "Major",
-      "credits": 3,
-      "prereq": "BUS 1101",
-      "status": "verified",
-      "source": "UoPeople 2025/26 Catalog — AS-BA"
-    },
-    {
-      "order": 13,
-      "code": "PHIL 1404",
-      "name": "Ethics and Social Responsibility",
-      "type": "General Education",
-      "credits": 3,
-      "prereq": "None",
-      "status": "verified",
-      "source": "UoPeople 2025/26 Catalog — GE requirements"
-    },
-    {
-      "order": 14,
-      "code": "BUS 2203",
-      "name": "Principles of Finance 1",
-      "type": "Major",
-      "credits": 3,
-      "prereq": "BUS 1102",
-      "status": "verified",
-      "source": "UoPeople 2025/26 Catalog — AS-BA"
-    },
-    {
-      "order": 15,
-      "code": "GE-NAT",
-      "name": "Natural Science — choose one",
-      "type": "General Education",
-      "credits": 3,
-      "prereq": "None",
-      "status": "verified",
-      "source": "UoPeople 2025/26 Catalog — GE requirements"
-    },
-    {
-      "order": 16,
-      "code": "COM 2001",
-      "name": "Professional Communication",
-      "type": "General Education",
-      "credits": 3,
-      "prereq": "None",
-      "status": "verified",
-      "source": "UoPeople 2025/26 Catalog — GE requirements / AS-BA"
-    },
-    {
-      "order": 17,
-      "code": "GE-HUM",
-      "name": "Humanities — choose one",
-      "type": "General Education",
-      "credits": 3,
-      "prereq": "None",
-      "status": "verified",
-      "source": "UoPeople 2025/26 Catalog — GE requirements"
-    },
-    {
-      "order": 18,
-      "code": "ELECTIVE",
-      "name": "Elective — choose with UoPeople pathway",
-      "type": "Elective",
-      "credits": 3,
-      "prereq": "None",
-      "status": "to_confirm",
-      "source": "UoPeople 2025/26 Catalog — Electives"
-    },
-    {
-      "order": 19,
-      "code": "HIST 1421",
-      "name": "Greek and Roman Civilization",
-      "type": "General Education",
-      "credits": 3,
-      "prereq": "None",
-      "status": "verified",
-      "source": "UoPeople 2025/26 Catalog — GE requirements"
-    },
-    {
-      "order": 20,
-      "code": "BUS 2207",
-      "name": "Multinational Management",
-      "type": "Major",
-      "credits": 3,
-      "prereq": "BUS 2201",
-      "status": "verified",
-      "source": "UoPeople 2025/26 Catalog — AS-BA"
-    }
-  ],
-  "ge_options": {
-    "Social & Behavioral Sciences": [
-      [
-        "ECON 1580",
-        "Applied Economics: Theory and Practice"
-      ],
-      [
-        "POLS 1503",
-        "Globalization"
-      ],
-      [
-        "PSYC 1111",
-        "Introduction to Health Psychology"
-      ],
-      [
-        "PSYC 1205",
-        "Emotional Intelligence"
-      ],
-      [
-        "PSYC 1504",
-        "Introduction to Psychology"
-      ],
-      [
-        "SOC 1502",
-        "Introduction to Sociology"
-      ]
-    ],
-    "Quantitative Reasoning": [
-      [
-        "MATH 1201",
-        "College Algebra"
-      ],
-      [
-        "MATH 1211",
-        "Calculus"
-      ],
-      [
-        "MATH 1280",
-        "Introduction to Statistics"
-      ]
-    ],
-    "Natural Science": [
-      [
-        "BIOL 1301",
-        "Introduction to Biology"
-      ],
-      [
-        "BIOL 1121",
-        "Biology 1 for Health Studies Majors"
-      ],
-      [
-        "ENVS 1301",
-        "Introduction to Environmental Sciences"
-      ]
-    ],
-    "Humanities": [
-      [
-        "AHIST 1401",
-        "Art History"
-      ],
-      [
-        "PHIL 1402",
-        "Introduction to Philosophy"
-      ],
-      [
-        "ENGL 1405",
-        "World Literature"
-      ]
-    ]
-  },
-  "sources": [
-    {
-      "title": "UoPeople Undergraduate Catalog 2025/26 (official PDF)",
-      "url": "https://catalog.uopeople.edu/wp-content/uploads/2026/05/UG-Catalog-AY2025-2026-New-Updates.pdf",
-      "use": "Primary source for degree requirements, GE, AS-BA major, academic rules."
-    },
-    {
-      "title": "UoPeople 2025/26 online catalog",
-      "url": "https://catalog.uopeople.edu/undergraduate-catalog-term-1",
-      "use": "Official searchable catalog and current policies."
-    },
-    {
-      "title": "AS-BA official program page",
-      "url": "https://www.uopeople.edu/programs/online-associates/business-administration/",
-      "use": "Official program overview, current public program facts and fees."
-    },
-    {
-      "title": "ASBA course page",
-      "url": "https://www.uopeople.edu/programs/online-associates/business-administration/courses/",
-      "use": "Official course overview."
-    },
-    {
-      "title": "UoPeople cost calculator",
-      "url": "https://www.uopeople.edu/uopeople-cost-calculator/",
-      "use": "Official course/fee reference."
-    }
-  ]
+ "updated": "2026-08-31",
+ "program": "Associate of Science in Business Administration (AS-BA)",
+ "university": "University of the People",
+ "credits_goal": 60,
+ "courses_goal": 20,
+ "pathway_note": "Os 20 itens acima seguem a sequência de aprendizagem de referência do catálogo 2025/26 para o Associate. A Learning Pathway individual pode variar e deve ser confirmada no Portal/Registration da estudante.",
+ "courses": [
+ {
+ "order": 1,
+ "term": 1,
+ "code": "UNIV 1001",
+ "name": "Online Education Strategies",
+ "type": "General Education · Information Literacy",
+ "credits": 3,
+ "prereq": "None",
+ "status": "verified",
+ "description": "Curso de preparação para a jornada online: biblioteca, recursos, métodos acadêmicos, políticas e estratégias de sucesso, incluindo gestão do tempo e do estresse.",
+ "objective": "Construir uma base prática para estudar online com autonomia, organização e uso consciente dos recursos da UoPeople.",
+ "proctored": false
+ },
+ {
+ "order": 2,
+ "term": 1,
+ "code": "BUS 1101",
+ "name": "Principles of Business Management",
+ "type": "Major · prerequisite",
+ "credits": 3,
+ "prereq": "None",
+ "status": "verified",
+ "description": "Introdução à gestão empresarial, incluindo missão, visão, valores, cultura organizacional, liderança, decisão, comportamento, motivação e recursos humanos; planejamento, liderança, organização e controle.",
+ "objective": "Entender como uma organização é planejada, organizada, liderada e controlada e criar uma visão inicial de gestão.",
+ "proctored": false
+ },
+ {
+ "order": 3,
+ "term": 2,
+ "code": "ENGL 1102",
+ "name": "English Composition 2",
+ "type": "General Education · Communication",
+ "credits": 3,
+ "prereq": "None",
+ "status": "verified",
+ "description": "Desenvolve leitura crítica, pensamento crítico e escrita acadêmica; aborda gêneros, retórica, pesquisa e citação, culminando em um trabalho acadêmico.",
+ "objective": "Escrever textos acadêmicos claros, pesquisar fontes e estruturar um trabalho com argumentação e citações adequadas.",
+ "proctored": true
+ },
+ {
+ "order": 4,
+ "term": 2,
+ "code": "BUS 1102",
+ "name": "Basic Accounting",
+ "type": "Major",
+ "credits": 3,
+ "prereq": "BUS 1101",
+ "status": "verified",
+ "description": "Introduz demonstrações financeiras, conceitos de gestão financeira e análise de informações contábeis, incluindo contas de ativos circulantes.",
+ "objective": "Ler e interpretar informações contábeis básicas para apoiar decisões financeiras e de negócios.",
+ "proctored": false
+ },
+ {
+ "order": 5,
+ "term": 3,
+ "code": "PSYC 1504",
+ "name": "Introduction to Psychology",
+ "type": "General Education · Social & Behavioral Sciences",
+ "credits": 3,
+ "prereq": "None",
+ "status": "verified",
+ "description": "Apresenta princípios básicos, abordagens e fundamentos teóricos da Psicologia, relacionando processos mentais, comportamento, corpo e relações com o outro.",
+ "objective": "Compreender conceitos fundamentais sobre mente e comportamento e relacioná-los ao cotidiano e ao trabalho.",
+ "proctored": false
+ },
+ {
+ "order": 6,
+ "term": 3,
+ "code": "BUS 1103",
+ "name": "Microeconomics",
+ "type": "Major",
+ "credits": 3,
+ "prereq": "BUS 1101",
+ "status": "verified",
+ "description": "Analisa interações entre famílias, empresas e governo na alocação de bens, serviços e recursos, incluindo comportamento do consumidor e da firma e estruturas de mercado.",
+ "objective": "Usar conceitos microeconômicos para entender decisões de consumidores, empresas e mercados.",
+ "proctored": false
+ },
+ {
+ "order": 7,
+ "term": 4,
+ "code": "SOC 1502",
+ "name": "Introduction to Sociology",
+ "type": "General Education · Social & Behavioral Sciences",
+ "credits": 3,
+ "prereq": "None",
+ "status": "verified",
+ "description": "Estuda grupos e instituições sociais, suas relações e temas como cultura, socialização, estratificação, mudança social e comportamento coletivo.",
+ "objective": "Observar organizações e relações sociais com uma lente sociológica, reconhecendo diferentes contextos culturais.",
+ "proctored": false
+ },
+ {
+ "order": 8,
+ "term": 4,
+ "code": "BUS 1104",
+ "name": "Macroeconomics",
+ "type": "Major",
+ "credits": 3,
+ "prereq": "BUS 1101",
+ "status": "verified",
+ "description": "Oferece visão geral da macroeconomia, políticas macroeconômicas e seus impactos sobre a economia nacional e global.",
+ "objective": "Entender como políticas econômicas afetam países, empresas e pessoas e avaliar seus efeitos de forma crítica.",
+ "proctored": false
+ },
+ {
+ "order": 9,
+ "term": 5,
+ "code": "MATH 1201",
+ "name": "College Algebra",
+ "type": "General Education · Quantitative Reasoning",
+ "credits": 3,
+ "prereq": "None",
+ "status": "verified",
+ "description": "Trabalha álgebra, trigonometria, geometria analítica, funções lineares, quadráticas e racionais, além de funções exponenciais e logarítmicas e sistemas lineares.",
+ "objective": "Fortalecer raciocínio quantitativo e resolução de problemas matemáticos aplicáveis a estudos e negócios.",
+ "proctored": true
+ },
+ {
+ "order": 10,
+ "term": 5,
+ "code": "BUS 2201",
+ "name": "Principles of Marketing",
+ "type": "Major",
+ "credits": 3,
+ "prereq": "BUS 1101",
+ "status": "verified",
+ "description": "Introduz marketing, necessidades do consumidor, segmentação, mercado-alvo, posicionamento, preço, distribuição e promoção, integrando princípios para decisões.",
+ "objective": "Aprender a analisar mercados e construir decisões básicas de marketing para produtos e serviços.",
+ "proctored": true
+ },
+ {
+ "order": 11,
+ "term": 6,
+ "code": "MATH 1280",
+ "name": "Introduction to Statistics",
+ "type": "General Education · Quantitative Reasoning",
+ "credits": 3,
+ "prereq": "None",
+ "status": "verified",
+ "description": "Apresenta conceitos de estatística e probabilidade e incentiva pensamento estatístico, com análise de dados, distribuição amostral e interpretação de resultados.",
+ "objective": "Interpretar dados e resultados estatísticos básicos para tomar decisões mais informadas.",
+ "proctored": true
+ },
+ {
+ "order": 12,
+ "term": 6,
+ "code": "BUS 2202",
+ "name": "E-Commerce",
+ "type": "Major",
+ "credits": 3,
+ "prereq": "BUS 1101",
+ "status": "verified",
+ "description": "Introduz modelos de negócios baseados na internet, gestão de e-commerce, sistemas de informação, e-marketing e relações entre internet, governo e sociedade.",
+ "objective": "Compreender como negócios digitais funcionam e reconhecer oportunidades e desafios das transações online.",
+ "proctored": true
+ },
+ {
+ "order": 13,
+ "term": 7,
+ "code": "PHIL 1404",
+ "name": "Ethics and Social Responsibility",
+ "type": "General Education · Values & Ethical Reasoning",
+ "credits": 3,
+ "prereq": "None",
+ "status": "verified",
+ "description": "Relaciona teorias éticas e filosofia a questões do mundo econômico, situações empresariais, estudos de caso e decisões morais.",
+ "objective": "Desenvolver raciocínio ético para analisar decisões empresariais e suas consequências para pessoas e sociedade.",
+ "proctored": false
+ },
+ {
+ "order": 14,
+ "term": 7,
+ "code": "BUS 2203",
+ "name": "Principles of Finance 1",
+ "type": "Major",
+ "credits": 3,
+ "prereq": "BUS 1102",
+ "status": "verified",
+ "description": "Apresenta princípios de finanças, mercados financeiros, sistemas bancários e problemas de financiamento e investimento, apoiando decisões financeiras.",
+ "objective": "Compreender fundamentos financeiros e usar conceitos de mercado, investimento e financiamento em decisões empresariais.",
+ "proctored": false
+ },
+ {
+ "order": 15,
+ "term": 8,
+ "code": "BIOL 1301",
+ "name": "Introduction to Biology",
+ "type": "General Education · Natural Science",
+ "credits": 3,
+ "prereq": "None",
+ "status": "verified",
+ "description": "Introduz conceitos fundamentais da Biologia, organização da vida, energia, crescimento, reprodução, homeostase, evolução e interação com o ambiente.",
+ "objective": "Construir alfabetização científica básica e compreender princípios que explicam os sistemas vivos e o ambiente.",
+ "proctored": false
+ },
+ {
+ "order": 16,
+ "term": 8,
+ "code": "COM 2001",
+ "name": "Professional Communication",
+ "type": "General Education · Communication / Major-listed",
+ "credits": 3,
+ "prereq": "None",
+ "status": "verified",
+ "description": "Apresenta princípios e práticas de comunicação profissional escrita, oral e interpessoal, incluindo dimensões éticas.",
+ "objective": "Comunicar ideias com clareza, ética e adequação em contextos acadêmicos e profissionais.",
+ "proctored": false
+ },
+ {
+ "order": 17,
+ "term": 9,
+ "code": "AHIST 1401",
+ "name": "Art History",
+ "type": "General Education · Humanities",
+ "credits": 3,
+ "prereq": "None",
+ "status": "verified",
+ "description": "Percorre a História da Arte Ocidental como produção cultural, abordando movimentos, estilos, mídias e relação entre artista, sociedade e cultura.",
+ "objective": "Aprender a observar e interpretar produção artística dentro de seu contexto histórico e cultural.",
+ "proctored": false
+ },
+ {
+ "order": 18,
+ "term": 9,
+ "code": "BUS 2204",
+ "name": "Personal Finance",
+ "type": "Major",
+ "credits": 3,
+ "prereq": "BUS 1101",
+ "status": "verified",
+ "description": "Aborda planejamento financeiro, orçamento, demonstrações básicas, crédito, poupança, riscos, seguros, aposentadoria e investimentos.",
+ "objective": "Organizar decisões financeiras pessoais com visão de segurança, planejamento e longo prazo.",
+ "proctored": false
+ },
+ {
+ "order": 19,
+ "term": 10,
+ "code": "HIST 1421",
+ "name": "Greek and Roman Civilization",
+ "type": "General Education · Civilization Studies, Cultures & Beliefs",
+ "credits": 3,
+ "prereq": "None",
+ "status": "verified",
+ "description": "Explora leituras e ideias de civilizações grega e romana, incluindo democracia, filosofia e a formação de aspectos da cultura ocidental.",
+ "objective": "Relacionar ideias, instituições e acontecimentos históricos ao desenvolvimento cultural e político do mundo ocidental.",
+ "proctored": true
+ },
+ {
+ "order": 20,
+ "term": 10,
+ "code": "BUS 2207",
+ "name": "Multinational Management",
+ "type": "Major",
+ "credits": 3,
+ "prereq": "BUS 2201",
+ "status": "verified",
+ "description": "Analisa funções e processos de gestão multinacional, planejamento, organização, liderança e controle em ambientes culturais e geográficos diversos.",
+ "objective": "Desenvolver uma visão inicial de gestão internacional e tomada de decisão entre culturas e fronteiras.",
+ "proctored": false
+ }
+ ],
+ "terms": [
+ {
+ "term": 1,
+ "label": "Term 1 · 2026",
+ "start": "2026-09-03",
+ "end": "2026-11-04",
+ "courses": [
+ 1,
+ 2
+ ],
+ "note": "Início do percurso: aprender o sistema online + fundamentos de gestão."
+ },
+ {
+ "term": 2,
+ "label": "Term 2 · 2026/27",
+ "start": "2026-11-12",
+ "end": "2027-01-13",
+ "courses": [
+ 3,
+ 4
+ ],
+ "note": "Comunicação acadêmica + leitura de demonstrações financeiras."
+ },
+ {
+ "term": 3,
+ "label": "Term 3 · 2027",
+ "start": "2027-01-28",
+ "end": "2027-03-31",
+ "courses": [
+ 5,
+ 6
+ ],
+ "note": "Comportamento humano + economia aplicada ao negócio."
+ },
+ {
+ "term": 4,
+ "label": "Term 4 · 2027",
+ "start": "2027-04-08",
+ "end": "2027-06-09",
+ "courses": [
+ 7,
+ 8
+ ],
+ "note": "Sociedade + visão macroeconômica."
+ },
+ {
+ "term": 5,
+ "label": "Term 5 · 2027",
+ "start": "2027-06-17",
+ "end": "2027-08-18",
+ "courses": [
+ 9,
+ 10
+ ],
+ "note": "Matemática + marketing."
+ },
+ {
+ "term": 6,
+ "label": "Term 6 · 2027/28",
+ "start": null,
+ "end": null,
+ "courses": [
+ 11,
+ 12
+ ],
+ "note": "Estatística + comércio digital. Datas futuras: confirmar no calendário oficial."
+ },
+ {
+ "term": 7,
+ "label": "Term 7 · 2028",
+ "start": null,
+ "end": null,
+ "courses": [
+ 13,
+ 14
+ ],
+ "note": "Ética + finanças empresariais. Datas futuras: confirmar no calendário oficial."
+ },
+ {
+ "term": 8,
+ "label": "Term 8 · 2028",
+ "start": null,
+ "end": null,
+ "courses": [
+ 15,
+ 16
+ ],
+ "note": "Ciência + comunicação profissional. Datas futuras: confirmar no calendário oficial."
+ },
+ {
+ "term": 9,
+ "label": "Term 9 · 2028",
+ "start": null,
+ "end": null,
+ "courses": [
+ 17,
+ 18
+ ],
+ "note": "Humanidades + finanças pessoais. Datas futuras: confirmar no calendário oficial."
+ },
+ {
+ "term": 10,
+ "label": "Term 10 · 2028",
+ "start": null,
+ "end": null,
+ "courses": [
+ 19,
+ 20
+ ],
+ "note": "Civilização + gestão multinacional. Datas futuras: confirmar no calendário oficial."
+ }
+ ],
+ "ge_options": {
+ "Social & Behavioral Sciences": [
+ [
+ "ECON 1580",
+ "Applied Economics: Theory and Practice"
+ ],
+ [
+ "POLS 1503",
+ "Globalization"
+ ],
+ [
+ "PSYC 1111",
+ "Introduction to Health Psychology"
+ ],
+ [
+ "PSYC 1205",
+ "Emotional Intelligence"
+ ],
+ [
+ "PSYC 1504",
+ "Introduction to Psychology"
+ ],
+ [
+ "SOC 1502",
+ "Introduction to Sociology"
+ ]
+ ],
+ "Quantitative Reasoning": [
+ [
+ "MATH 1201",
+ "College Algebra"
+ ],
+ [
+ "MATH 1211",
+ "Calculus"
+ ],
+ [
+ "MATH 1280",
+ "Introduction to Statistics"
+ ]
+ ],
+ "Natural Science": [
+ [
+ "BIOL 1301",
+ "Introduction to Biology"
+ ],
+ [
+ "BIOL 1121",
+ "Biology 1 for Health Studies Majors"
+ ],
+ [
+ "ENVS 1301",
+ "Introduction to Environmental Sciences"
+ ]
+ ],
+ "Humanities": [
+ [
+ "AHIST 1401",
+ "Art History"
+ ],
+ [
+ "PHIL 1402",
+ "Introduction to Philosophy"
+ ],
+ [
+ "ENGL 1405",
+ "World Literature"
+ ]
+ ]
+ },
+ "sources": [
+ {
+ "title": "UoPeople Undergraduate Catalog 2025/26 · PDF oficial",
+ "url": "https://catalog.uopeople.edu/wp-content/uploads/2026/05/UG-Catalog-AY2025-2026-New-Updates.pdf",
+ "use": "Fonte primária para requisitos, sequência de aprendizagem, disciplinas e descrições."
+ },
+ {
+ "title": "UoPeople Undergraduate Catalog 2025/26 · versão online",
+ "url": "https://catalog.uopeople.edu/undergraduate-catalog-term-1",
+ "use": "Catálogo oficial pesquisável e políticas acadêmicas."
+ },
+ {
+ "title": "UoPeople Academic Calendar",
+ "url": "https://www.uopeople.edu/academic-calendar/",
+ "use": "Datas oficiais de 2026-27 e atualizações futuras do calendário."
+ },
+ {
+ "title": "UoPeople · AS-BA",
+ "url": "https://www.uopeople.edu/programs/online-associates/business-administration/",
+ "use": "Página oficial pública do programa."
+ },
+ {
+ "title": "UoPeople · AS-BA Courses",
+ "url": "https://www.uopeople.edu/programs/online-associates/business-administration/courses/",
+ "use": "Página oficial pública de cursos do programa."
+ }
+ ]
 }
