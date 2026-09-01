@@ -1,176 +1,61 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#28451b">
-<title>Caderno Acadêmico — Ester Moreira · UoPeople · 2026</title>
-<style>
-:root{--green:#28451b;--green2:#416b2c;--cream:#f7f5ee;--sand:#e9e5da;--terra:#b86145;--red:#b33b35;--blue:#386fa4;--ink:#20221f;--muted:#6d7169;--white:#fff;--line:#d8d5cb}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.45}
-button,input,select,textarea{font:inherit}button{cursor:pointer}.app{min-height:100vh}.top{background:var(--green);color:white;padding:28px 18px 22px}.wrap{max-width:980px;margin:auto}.eyebrow{font-size:12px;letter-spacing:.16em;font-weight:800;opacity:.82}.top h1{font-size:clamp(34px,8vw,64px);line-height:.95;margin:10px 0 16px;max-width:720px}.top p{font-size:17px;max-width:760px;opacity:.92}.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}.chip{background:white;color:var(--green);border-radius:999px;padding:9px 13px;font-weight:800;font-size:13px}.nav{position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid var(--line);overflow:auto;white-space:nowrap}.nav button{border:0;background:transparent;padding:14px 12px;color:var(--green);font-weight:800}.nav button.active{border-bottom:3px solid var(--terra)}main{max-width:980px;margin:auto;padding:18px}.page{display:none}.page.active{display:block}.section{background:white;border:1px solid var(--line);border-radius:14px;padding:18px;margin-bottom:16px;box-shadow:0 2px 10px #00000008}.section h2{margin:0 0 6px;color:var(--green);font-size:26px}.section h3{margin:18px 0 8px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}.card{background:#faf9f4;border:1px solid var(--line);border-radius:12px;padding:14px}.num{font-size:28px;font-weight:900;color:var(--green)}.muted{color:var(--muted)}.progress{height:10px;background:var(--sand);border-radius:99px;overflow:hidden}.progress i{display:block;height:100%;background:var(--green2);width:0}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.btn{border:0;border-radius:10px;padding:10px 13px;background:var(--green);color:white;font-weight:800}.btn.alt{background:var(--sand);color:var(--ink)}.btn.red{background:var(--red)}.field{display:grid;gap:5px;margin-bottom:11px}.field label{font-size:13px;font-weight:800}.field input,.field select,.field textarea{width:100%;border:1px solid var(--line);border-radius:9px;padding:10px;background:#fff}.field textarea{min-height:90px;resize:vertical}.list{display:grid;gap:8px}.item{border:1px solid var(--line);border-radius:10px;padding:12px;background:#fff}.item.done{opacity:.65}.item-row{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}.badge{display:inline-block;padding:4px 8px;border-radius:999px;background:var(--sand);font-size:11px;font-weight:800}.empty{padding:20px;text-align:center;background:#faf9f4;border:1px dashed var(--line);border-radius:10px}.notice{border-left:4px solid var(--terra);padding:12px;background:#fbf5f1}.search{position:sticky;top:51px;z-index:9;background:var(--cream);padding:10px 0}.search input{width:100%;padding:13px;border:1px solid var(--line);border-radius:11px}.small{font-size:12px}.focus{position:fixed;inset:auto 14px 14px auto;background:var(--green);color:white;border:0;border-radius:999px;padding:13px 16px;font-weight:900;box-shadow:0 6px 22px #0004}.toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);background:#20221f;color:white;padding:11px 15px;border-radius:999px;display:none;z-index:30}.footer{padding:25px 18px;color:var(--muted);font-size:12px;text-align:center}
-@media(min-width:760px){main{padding:26px}.top{padding:38px 26px}.section{padding:22px}}
-</style>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#2f511f"><meta name="description" content="Caderno Acadêmico Digital — Ester Moreira — UoPeople 2026">
+<link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%232f511f'/><text x='50' y='67' font-size='56' text-anchor='middle' fill='white'>E</text></svg>">
+<title>Ester Moreira · Caderno Acadêmico · UoPeople 2026</title>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="app">
-<header class="top"><div class="wrap">
-<div class="eyebrow">UNIVERSITY OF THE PEOPLE · ASBA · 2026</div>
-<h1>Ester Moreira<br>Caderno Acadêmico</h1>
-<p>Centro pessoal para faculdade, rotina de estudos, saúde da rotina, reflexão e vida devocional. Dados pessoais não confirmados ficam marcados como <b>A confirmar</b>.</p>
-<div class="chips"><span class="chip">60 créditos · referência do plano</span><span class="chip">20 cursos · referência do plano</span><span class="chip">10 termos · meta</span><span class="chip">100% online</span></div>
+<header class="hero"><div class="wrap">
+<div class="eyebrow">University of the People · Associate of Science in Business Administration</div>
+<h1>Ester Moreira<br><span style="font-weight:450">Caderno Acadêmico</span></h1>
+<p>Centro pessoal para faculdade, rotina de estudos, saúde da rotina, reflexão e vida devocional. Informações institucionais sem confirmação não são inventadas: ficam marcadas como <b>A confirmar</b>.</p>
+<div class="pills"><span class="pill">60 créditos</span><span class="pill">20 cursos</span><span class="pill">10 termos · meta pessoal</span><span class="pill">100% online</span></div>
 </div></header>
-
-<nav class="nav" id="nav"></nav>
-<main>
-<div class="search"><input id="globalSearch" placeholder="Pesquisar em tarefas, disciplinas, leituras, reflexões e estudos…"></div>
-
-<section id="inicio" class="page active">
-<div class="section"><h2>Olá, Ester.</h2><p>Seu dia começa pelo que realmente precisa da sua atenção.</p>
+<nav><div class="navin">
+<button data-tab="overview">Visão</button><button data-tab="courses">Disciplinas</button><button data-tab="routine">Rotina</button><button data-tab="focus">Foco</button><button data-tab="wellbeing">Saúde & mente</button><button data-tab="devotional">Devocional</button><button data-tab="tasks">Tarefas</button><button data-tab="sources">Fontes</button>
+</div></nav>
+<main class="wrap">
+<section id="overview" class="tab">
 <div class="grid">
-<div class="card"><div class="num" id="todayTasks">0</div><b>Tarefas para hoje</b></div>
-<div class="card"><div class="num" id="pendingTasks">0</div><b>Tarefas pendentes</b></div>
-<div class="card"><div class="num" id="studyHours">0h</div><b>Estudo registrado</b></div>
-<div class="card"><div class="num" id="goalCount">0</div><b>Metas ativas</b></div>
-</div></div>
-<div class="section"><h2>Foco de hoje</h2><div class="grid">
-<div class="card"><b>🎓 Acadêmico</b><p>Escolha uma tarefa acadêmica concreta e pequena para começar.</p></div>
-<div class="card"><b>🧠 Estudo</b><p>Defina uma sessão com começo, fim e objetivo claro.</p></div>
-<div class="card"><b>✝️ Espiritual</b><p>Separe um tempo tranquilo para leitura, oração e reflexão.</p></div>
-</div></div>
-<div class="section"><h2>Progresso do sistema</h2><p class="muted">O painel é alimentado pelos registros feitos nas outras áreas.</p><div class="progress"><i id="overallBar"></i></div><p id="overallText" class="small"></p></div>
-</section>
+<div class="card span-8"><h2>O mapa da jornada</h2><p><b>Objetivo:</b> avançar com constância, sem transformar o curso em uma corrida. A meta pessoal de 10 termos é apenas planejamento; o caminho oficial pode variar conforme a Learning Pathway individual, carga permitida, disponibilidade e histórico acadêmico.</p><div class="notice"><b>Regra de confiabilidade:</b> dados acadêmicos oficiais vêm de fontes da UoPeople. O sistema nunca deve preencher um código, pré-requisito, data de termo ou valor como fato quando a fonte não confirmar.</div></div>
+<div class="card span-4"><h3>Progresso</h3><div class="stats"><div class="stat"><strong id="doneCourses">0</strong>cursos</div><div class="stat"><strong id="doneCredits">0</strong>créditos</div><div class="stat"><strong id="taskDone">0</strong>tarefas</div><div class="stat"><strong id="streak">0</strong>dias</div></div><br><div class="progress"><i id="courseBar"></i></div><p class="small muted" id="progressText">0 de 20 cursos marcados</p></div>
+<div class="card span-6"><h2>Hoje</h2><div class="row between"><span id="todayLabel"></span><span class="badge">modo leve</span></div><p>Escolha <b>uma prioridade acadêmica</b>, uma ação de cuidado físico/mental e um pequeno momento de conexão espiritual. Feito é melhor que perfeito.</p><div class="row"><button class="btn" onclick="openFocus()">Iniciar foco</button><button class="btn secondary" onclick="quickTask()">Adicionar tarefa</button></div></div>
+<div class="card span-6"><h2>Sem sobrecarga</h2><ul><li>Quebre o estudo em blocos pequenos.</li><li>Use instruções concretas: “abrir leitura”, “ler 5 páginas”, “anotar 3 ideias”.</li><li>Faça pausas antes de chegar ao limite.</li><li>Se perder um dia, retome no próximo — sem “pagar dívida” de estudo.</li></ul><p class="small muted">Estas são estratégias de organização e acessibilidade, não diagnóstico ou tratamento médico.</p></div>
+</div></section>
 
-<section id="faculdade" class="page">
-<div class="section"><h2>Minha Faculdade</h2><div class="grid">
-<div class="card"><b>Universidade</b><br>University of the People</div><div class="card"><b>Programa</b><br>ASBA · confirmar no portal</div>
-<div class="card"><b>Modalidade</b><br>Online</div><div class="card"><b>Status</b><br>A confirmar</div>
-</div><h3>Dados que precisam ser confirmados</h3><ul><li>Programa exato e versão curricular</li><li>Termo atual</li><li>Disciplinas atuais</li><li>Créditos concluídos e restantes</li><li>GPA e calendário oficial</li></ul></div>
-</section>
+<section id="courses" class="tab" hidden><div class="card"><div class="row between"><div><h2>20 etapas do AS-BA</h2><p class="muted">Estrutura baseada no catálogo UoPeople 2025/26. A ordem individual da Ester deve ser conferida na página de Registration/Learning Pathway da própria conta.</p></div><button class="btn secondary" onclick="resetCourses()">Limpar marcações</button></div><div id="courseList"></div></div></section>
 
-<section id="disciplinas" class="page"><div class="section"><h2>Disciplinas</h2><p class="muted">Cadastre somente informações verificadas no portal da universidade. Campos não confirmados permanecem como A confirmar.</p>
-<div class="actions"><button class="btn" onclick="showForm('discForm')">+ Nova disciplina</button></div><div id="discForm" style="display:none;margin-top:15px"></div><div id="discList" class="list" style="margin-top:14px"></div></div></section>
+<section id="routine" class="tab" hidden><div class="grid">
+<div class="card span-8"><h2>Rotina diária flexível</h2><p class="muted">Use como trilho, não como obrigação. Ajuste ao horário real.</p><div id="routineList"></div></div>
+<div class="card span-4"><h2>Planejamento semanal</h2><label>Prioridade da semana</label><input id="weekGoal" placeholder="Ex.: concluir unidade 3"><label>3 resultados essenciais</label><textarea id="weekResults" rows="5" placeholder="1. ...&#10;2. ...&#10;3. ..."></textarea><button class="btn" onclick="saveWeek()">Salvar</button><p id="weekSaved" class="small muted"></p></div>
+</div></section>
 
-<section id="calendario" class="page"><div class="section"><h2>Calendário</h2><p>Use para juntar eventos acadêmicos, pessoais, revisões e devocionais.</p><div class="actions"><button class="btn" onclick="showForm('eventForm')">+ Novo evento</button></div><div id="eventForm" style="display:none;margin-top:15px"></div><div id="eventList" class="list" style="margin-top:14px"></div></div></section>
+<section id="focus" class="tab" hidden><div class="grid">
+<div class="card span-8"><h2>Modo foco</h2><p>Bloco curto para reduzir a barreira de começar. Você pode usar 15, 25 ou 45 minutos.</p><div class="tabs"><button onclick="setTimer(15)">15 min</button><button class="active" onclick="setTimer(25)">25 min</button><button onclick="setTimer(45)">45 min</button></div><div class="timer" id="timer">25:00</div><div class="row" style="justify-content:center"><button class="btn" onclick="startTimer()">Começar</button><button class="btn secondary" onclick="pauseTimer()">Pausar</button><button class="btn ghost" onclick="resetTimer()">Zerar</button></div></div>
+<div class="card span-4"><h2>Antes de começar</h2><ol><li>Qual é a única tarefa?</li><li>Qual é o menor primeiro passo?</li><li>O celular precisa ficar longe?</li><li>Quando o timer acabar, vou parar ou decidir conscientemente continuar?</li></ol></div>
+</div></section>
 
-<section id="rotina" class="page"><div class="section"><h2>Rotina sustentável</h2><p>Uma rotina simples reduz a carga de decisão. Não precisa fazer tudo; escolha o próximo passo.</p>
-<div class="grid"><div class="card"><h3>🌅 Manhã</h3><label>☐ Água e higiene</label><br><label>☐ Movimento leve</label><br><label>☐ Bíblia / oração</label><br><label>☐ Definir 1 prioridade</label></div>
-<div class="card"><h3>☀️ Tarde</h3><label>☐ Faculdade</label><br><label>☐ Sessão de estudo</label><br><label>☐ Pausa</label><br><label>☐ Alimentação</label></div>
-<div class="card"><h3>🌙 Noite</h3><label>☐ Revisão breve</label><br><label>☐ Organizar amanhã</label><br><label>☐ Reflexão</label><br><label>☐ Desacelerar</label></div></div>
-<div class="notice"><b>Regra de cuidado:</b> a aplicação organiza a rotina, mas não substitui orientação médica ou psicológica. Em dias difíceis, reduza a tarefa ao menor passo possível.</div></div></section>
+<section id="wellbeing" class="tab" hidden><div class="grid">
+<div class="card span-6"><h2>Check-in de hoje</h2><label>Energia (0–10)</label><input id="energy" type="range" min="0" max="10" value="5" oninput="energyVal.textContent=this.value"><div class="row between"><span>baixa</span><b id="energyVal">5</b><span>alta</span></div><label>Sobrecarga (0–10)</label><input id="overload" type="range" min="0" max="10" value="3" oninput="overVal.textContent=this.value"><div class="row between"><span>tranquila</span><b id="overVal">3</b><span>alta</span></div><label>O que ajudaria agora?</label><select id="care"><option>Pausa de 5 minutos</option><option>Água / alimentação</option><option>Movimento leve</option><option>Reduzir a tarefa</option><option>Silêncio / menos estímulos</option><option>Conversar com alguém</option></select><button class="btn" onclick="saveCheckin()">Registrar</button><p id="checkSaved" class="small muted"></p></div>
+<div class="card span-6"><h2>Kit de recuperação</h2><ul><li><b>Corpo:</b> água, refeição adequada, higiene, movimento conforme sua condição.</li><li><b>Ambiente:</b> reduzir notificações e estímulos quando necessário.</li><li><b>Mente:</b> dividir a tarefa, usar um timer e escrever o próximo passo.</li><li><b>Descanso:</b> preservar sono e pausas.</li><li><b>Ajuda:</b> quando sofrimento ou funcionamento estiverem comprometidos, procure profissional de saúde.</li></ul><div class="notice warn"><b>Importante:</b> o caderno não diagnostica neurodivergência, ansiedade ou qualquer condição e não substitui avaliação profissional.</div></div>
+<div class="card span-12"><h2>Registro</h2><div id="checkHistory"></div></div></div></section>
 
-<section id="estudos" class="page"><div class="section"><h2>Registro de estudos</h2><div id="studyForm"></div><div id="studyList" class="list"></div></div></section>
+<section id="devotional" class="tab" hidden><div class="grid">
+<div class="card span-8"><h2>Tempo devocional</h2><p>Um espaço simples para oração, leitura bíblica, silêncio e reflexão. Não é uma competição de quantidade.</p><div class="row"><span class="badge">10–20 min</span><span class="badge">sem perfeccionismo</span></div><ol><li><b>Aquietar:</b> 1–2 minutos de respiração e presença.</li><li><b>Leitura:</b> escolha uma pequena passagem.</li><li><b>Observar:</b> o que o texto diz?</li><li><b>Aplicar:</b> o que posso praticar hoje?</li><li><b>Orar:</b> agradecimento, pedidos e entrega.</li></ol><label>Referência lida</label><input id="bibleRef" placeholder="Ex.: Salmo 23"><label>Uma ideia que quero guardar</label><textarea id="devNote" rows="4"></textarea><button class="btn" onclick="saveDev()">Salvar reflexão</button><p id="devSaved" class="small muted"></p></div>
+<div class="card span-4"><h2>Para dias difíceis</h2><p>Se a mente estiver acelerada, reduza o objetivo: uma passagem curta, uma oração simples e alguns minutos de silêncio já podem ser o seu momento.</p><div class="notice">O foco aqui é criar espaço para relacionamento com Deus, não medir desempenho espiritual.</div></div>
+<div class="card span-12"><h2>Histórico devocional</h2><div id="devHistory"></div></div></div></section>
 
-<section id="tarefas" class="page"><div class="section"><h2>Tarefas</h2><div id="taskForm"></div><div id="taskList" class="list"></div></div></section>
+<section id="tasks" class="tab" hidden><div class="grid">
+<div class="card span-4"><h2>Nova tarefa</h2><label>Tarefa</label><input id="taskInput" placeholder="Ex.: ler unidade 2"><label>Categoria</label><select id="taskCat"><option>Estudo</option><option>Casa/vida</option><option>Saúde</option><option>Devocional</option></select><button class="btn" onclick="addTask()">Adicionar</button></div>
+<div class="card span-8"><h2>Lista</h2><div id="taskList"></div></div></div></section>
 
-<section id="notas" class="page"><div class="section"><h2>Notas e desempenho</h2><div id="gradeForm"></div><div id="gradeList" class="list"></div><div class="grid" style="margin-top:14px"><div class="card"><div class="num" id="avgGrade">—</div><b>Média registrada</b></div><div class="card"><div class="num" id="gradeCount">0</div><b>Avaliações</b></div></div></div></section>
-
-<section id="progresso" class="page"><div class="section"><h2>Progresso</h2><div class="grid"><div class="card"><b>Tarefas</b><div class="progress"><i id="taskBar"></i></div><p id="taskProg"></p></div><div class="card"><b>Metas</b><div class="progress"><i id="goalBar"></i></div><p id="goalProg"></p></div><div class="card"><b>Disciplinas</b><div class="progress"><i id="discBar"></i></div><p id="discProg"></p></div></div></div></section>
-
-<section id="metas" class="page"><div class="section"><h2>Metas</h2><div id="goalForm"></div><div id="goalList" class="list"></div></div></section>
-
-<section id="leituras" class="page"><div class="section"><h2>Leituras e materiais</h2><div id="readForm"></div><div id="readList" class="list"></div></div></section>
-
-<section id="revisao" class="page"><div class="section"><h2>Revisão</h2><div id="reviewForm"></div><div id="reviewList" class="list"></div></div></section>
-
-<section id="reflexao" class="page"><div class="section"><h2>Reflexão acadêmica</h2><div id="reflectionForm"></div><div id="reflectionList" class="list"></div></div></section>
-
-<section id="devocional" class="page"><div class="section"><h2>Devocional</h2><p>Registro pessoal de leitura, oração e aplicação, em linguagem coerente com uma perspectiva reformada/presbiteriana.</p><div id="devForm"></div><div id="devList" class="list"></div></div></section>
-
-<section id="biblia" class="page"><div class="section"><h2>Bíblia / Genebra</h2><p>Área de referências e notas pessoais. Não reproduz textos bíblicos protegidos integralmente.</p><div class="grid"><div class="card"><b>Antigo Testamento</b><p>Lei · História · Poesia · Profetas</p></div><div class="card"><b>Novo Testamento</b><p>Evangelhos · Atos · Epístolas · Apocalipse</p></div><div class="card"><b>Temas</b><p>Doutrina · Cristo · Graça · Igreja · Vida cristã</p></div></div><div id="bibForm"></div><div id="bibList" class="list"></div></div></section>
-
-<section id="teologia" class="page"><div class="section"><h2>Estudos teológicos</h2><div class="grid"><div class="card"><b>Teologia Sistemática</b><p>Escrituras, Deus, Cristo, Espírito, salvação e igreja.</p></div><div class="card"><b>Teologia Bíblica</b><p>Temas e desenvolvimento da revelação na Escritura.</p></div><div class="card"><b>História da Igreja</b><p>Períodos, documentos, movimentos e contexto histórico.</p></div><div class="card"><b>Tradição Reformada</b><p>Confissões e catecismos, sempre distinguindo fonte de interpretação pessoal.</p></div></div><div id="theologyForm"></div><div id="theologyList" class="list"></div></div></section>
-
-<section id="mapa" class="page"><div class="section"><h2>Mapa do curso</h2><p>Planejamento estrutural. Os nomes oficiais das disciplinas só devem ser preenchidos após confirmação.</p><div class="grid" id="courseMap"></div></div></section>
-
-<section id="info" class="page"><div class="section"><h2>Informações UoPeople</h2><div class="grid"><div class="card"><b>Portal acadêmico</b><p>Acessar pelo endereço oficial informado pela universidade.</p></div><div class="card"><b>Biblioteca</b><p>Usar a biblioteca e recursos disponibilizados oficialmente.</p></div><div class="card"><b>Calendário</b><p>Registrar aqui somente datas conferidas no portal.</p></div><div class="card"><b>Suporte</b><p>Manter os contatos oficiais atualizados.</p></div></div><div class="notice">Para links oficiais, confirme sempre o domínio da universidade antes de cadastrar no aplicativo.</div></div></section>
-
-<section id="alertas" class="page"><div class="section"><h2>Alertas</h2><div id="alertList"></div></div></section>
-
-<section id="config" class="page"><div class="section"><h2>Configurações e backup</h2><p>Os dados deste protótipo são armazenados localmente no dispositivo/navegador.</p><div class="actions"><button class="btn" onclick="exportData()">Exportar backup JSON</button><button class="btn alt" onclick="document.getElementById('importFile').click()">Importar backup</button><button class="btn red" onclick="clearData()">Limpar dados</button></div><input id="importFile" type="file" accept=".json,application/json" hidden onchange="importData(event)"><h3>Privacidade</h3><p class="muted">Não insira senhas, dados bancários ou informações sensíveis. O aplicativo não envia os registros para um servidor.</p></div></section>
-
-<section id="pesquisa" class="page"><div class="section"><h2>Pesquisa global</h2><p>Use a caixa no topo para procurar nos registros locais.</p><div id="searchResults" class="list"><div class="empty">Digite algo para pesquisar.</div></div></div></section>
+<section id="sources" class="tab" hidden><div class="card"><h2>Bases e fontes confiáveis</h2><div class="notice"><b>Hierarquia:</b> 1) catálogo oficial da UoPeople; 2) páginas oficiais da UoPeople; 3) documentos oficiais publicados pela UoPeople. Sites de terceiros não são usados para afirmar requisitos acadêmicos.</div><div id="sourcesList"></div><h3 style="margin-top:24px">O que o catálogo confirma</h3><ul><li>AS-BA: mínimo de <b>60 créditos aprovados</b>.</li><li>Para Associate: CGPA mínimo de <b>2,00</b> e GPA mínimo de <b>2,00</b> no major.</li><li>O catálogo 2025/26 lista <b>21 créditos / 7 cursos</b> de General Education para Associate’s.</li><li>O AS-BA lista os cursos major obrigatórios e informa que há electives.</li><li>A Learning Pathway individual pode variar conforme histórico, requisitos do momento, carga e disponibilidade.</li></ul></div></section>
 </main>
-<button class="focus" onclick="toggleFocus()">Modo foco</button><div class="toast" id="toast"></div>
-<footer class="footer">Caderno Acadêmico Digital · Ester Moreira · 2026 · Dados pessoais locais</footer>
-</div>
-<script>
-const KEY='ester_uop_2026_v1';
-const navItems=[['inicio','Início'],['faculdade','Faculdade'],['disciplinas','Disciplinas'],['calendario','Calendário'],['rotina','Rotina'],['estudos','Estudos'],['tarefas','Tarefas'],['notas','Notas'],['progresso','Progresso'],['metas','Metas'],['leituras','Leituras'],['revisao','Revisão'],['reflexao','Reflexão'],['devocional','Devocional'],['biblia','Bíblia / Genebra'],['teologia','Teologia'],['mapa','Mapa do curso'],['info','Info UoPeople'],['alertas','Alertas'],['pesquisa','Pesquisa'],['config','Configurações']];
-const blank={disciplines:[],events:[],study:[],tasks:[],grades:[],goals:[],readings:[],reviews:[],reflections:[],devotionals:[],bible:[],theology:[]};
-let db=load();
-function load(){try{return {...blank,...JSON.parse(localStorage.getItem(KEY)||'{}')}}catch(e){return {...blank}}}
-function save(){localStorage.setItem(KEY,JSON.stringify(db));renderAll();toast('Salvo neste dispositivo.')}
-function esc(s){return String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]))}
-function id(){return Date.now().toString(36)+Math.random().toString(36).slice(2,7)}
-function toast(t){let x=document.getElementById('toast');x.textContent=t;x.style.display='block';setTimeout(()=>x.style.display='none',1800)}
-document.getElementById('nav').innerHTML=navItems.map((x,i)=>`<button data-page="${x[0]}" class="${i===0?'active':''}">${x[1]}</button>`).join('');
-document.querySelectorAll('.nav button').forEach(b=>b.onclick=()=>go(b.dataset.page));
-function go(p){document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));document.getElementById(p).classList.add('active');document.querySelectorAll('.nav button').forEach(x=>x.classList.toggle('active',x.dataset.page===p));scrollTo({top:0,behavior:'smooth'});renderAll()}
-function formHTML(type){
-const forms={
-discForm:`<div class="grid"><div class="field"><label>Nome da disciplina</label><input id="d_name" placeholder="Ex.: A confirmar"></div><div class="field"><label>Código</label><input id="d_code" placeholder="A confirmar"></div><div class="field"><label>Termo</label><input id="d_term" placeholder="A confirmar"></div><div class="field"><label>Créditos</label><input id="d_credits" placeholder="A confirmar"></div></div><button class="btn" onclick="addDisc()">Salvar disciplina</button>`,
-eventForm:`<div class="grid"><div class="field"><label>Evento</label><input id="e_title"></div><div class="field"><label>Data</label><input id="e_date" type="date"></div><div class="field"><label>Categoria</label><select id="e_cat"><option>Acadêmico</option><option>Tarefa</option><option>Leitura</option><option>Revisão</option><option>Devocional</option><option>Pessoal</option></select></div></div><button class="btn" onclick="addEvent()">Salvar evento</button>`,
-studyForm:`<div class="grid"><div class="field"><label>Data</label><input id="s_date" type="date"></div><div class="field"><label>Início</label><input id="s_start" type="time"></div><div class="field"><label>Fim</label><input id="s_end" type="time"></div><div class="field"><label>Disciplina</label><input id="s_disc" placeholder="A confirmar"></div><div class="field"><label>Assunto</label><input id="s_topic"></div><div class="field"><label>Concentração (1–5)</label><input id="s_focus" type="number" min="1" max="5"></div></div><button class="btn" onclick="addStudy()">Registrar estudo</button>`,
-taskForm:`<div class="grid"><div class="field"><label>Tarefa</label><input id="t_title"></div><div class="field"><label>Disciplina</label><input id="t_disc" placeholder="A confirmar"></div><div class="field"><label>Prazo</label><input id="t_due" type="date"></div><div class="field"><label>Prioridade</label><select id="t_pri"><option>Urgente</option><option>Alta</option><option selected>Média</option><option>Baixa</option></select></div></div><button class="btn" onclick="addTask()">Adicionar tarefa</button>`,
-gradeForm:`<div class="grid"><div class="field"><label>Atividade</label><input id="g_title"></div><div class="field"><label>Disciplina</label><input id="g_disc"></div><div class="field"><label>Nota</label><input id="g_value" type="number" step="0.01"></div><div class="field"><label>Peso</label><input id="g_weight" type="number" step="0.01" placeholder="Opcional"></div></div><button class="btn" onclick="addGrade()">Registrar nota</button>`,
-goalForm:`<div class="grid"><div class="field"><label>Meta</label><input id="m_title"></div><div class="field"><label>Categoria</label><select id="m_cat"><option>Acadêmica</option><option>Pessoal</option><option>Espiritual</option></select></div><div class="field"><label>Prazo</label><input id="m_due" type="date"></div></div><button class="btn" onclick="addGoal()">Criar meta</button>`,
-readForm:`<div class="grid"><div class="field"><label>Título</label><input id="r_title"></div><div class="field"><label>Autor / fonte</label><input id="r_author"></div><div class="field"><label>Tipo</label><select id="r_type"><option>Livro</option><option>Artigo</option><option>PDF</option><option>Página web</option><option>Vídeo</option><option>Bíblia</option></select></div></div><button class="btn" onclick="addReading()">Adicionar leitura</button>`,
-reviewForm:`<div class="grid"><div class="field"><label>Pergunta</label><input id="v_q"></div><div class="field"><label>Resposta</label><textarea id="v_a"></textarea></div><div class="field"><label>Tema</label><input id="v_topic"></div><div class="field"><label>Próxima revisão</label><input id="v_date" type="date"></div></div><button class="btn" onclick="addReview()">Criar revisão</button>`,
-reflectionForm:`<div class="field"><label>Data</label><input id="f_date" type="date"></div><div class="field"><label>O que aprendi hoje?</label><textarea id="f_learn"></textarea></div><div class="field"><label>O que foi difícil?</label><textarea id="f_hard"></textarea></div><div class="field"><label>O que preciso revisar?</label><textarea id="f_review"></textarea></div><div class="field"><label>Qual é o próximo passo?</label><textarea id="f_next"></textarea></div><button class="btn" onclick="addReflection()">Salvar reflexão</button>`,
-devForm:`<div class="field"><label>Data</label><input id="dv_date" type="date"></div><div class="field"><label>Referência bíblica</label><input id="dv_ref" placeholder="A inserir / A confirmar"></div><div class="field"><label>O que o texto ensina sobre Deus?</label><textarea id="dv_god"></textarea></div><div class="field"><label>O que revela sobre Cristo?</label><textarea id="dv_christ"></textarea></div><div class="field"><label>Oração</label><textarea id="dv_prayer"></textarea></div><div class="field"><label>Aplicação</label><textarea id="dv_apply"></textarea></div><button class="btn" onclick="addDev()">Salvar devocional</button>`,
-bibForm:`<div class="grid"><div class="field"><label>Referência</label><input id="b_ref" placeholder="Ex.: Romanos 5:1"></div><div class="field"><label>Tema</label><input id="b_topic"></div><div class="field"><label>Nota pessoal</label><textarea id="b_note"></textarea></div></div><button class="btn" onclick="addBible()">Salvar referência</button>`,
-theologyForm:`<div class="grid"><div class="field"><label>Tema</label><input id="th_title"></div><div class="field"><label>Categoria</label><input id="th_cat" placeholder="Teologia Sistemática, História…"></div><div class="field"><label>Fonte</label><input id="th_source"></div></div><button class="btn" onclick="addTheology()">Salvar estudo</button>`
-};
-return forms[type]
-}
-['discForm','eventForm','studyForm','taskForm','gradeForm','goalForm','readForm','reviewForm','reflectionForm','devForm','bibForm','theologyForm'].forEach(x=>{let el=document.getElementById(x);if(el)el.innerHTML=x==='discForm'?'':formHTML(x)});
-function showForm(x){let el=document.getElementById(x);el.style.display=el.style.display==='none'?'block':'none'}
-function addDisc(){db.disciplines.push({id:id(),name:val('d_name')||'A confirmar',code:val('d_code')||'A confirmar',term:val('d_term')||'A confirmar',credits:val('d_credits')||'A confirmar',status:'Não iniciada'});save();document.getElementById('discForm').style.display='none'}
-function addEvent(){db.events.push({id:id(),title:val('e_title'),date:val('e_date'),cat:val('e_cat')});save()}
-function mins(a,b){if(!a||!b)return 0;let [ah,am]=a.split(':').map(Number),[bh,bm]=b.split(':').map(Number);let n=(bh*60+bm)-(ah*60+am);return n>0?n:0}
-function addStudy(){db.study.push({id:id(),date:val('s_date')||new Date().toISOString().slice(0,10),start:val('s_start'),end:val('s_end'),disc:val('s_disc')||'A confirmar',topic:val('s_topic'),focus:val('s_focus')});save()}
-function addTask(){db.tasks.push({id:id(),title:val('t_title'),disc:val('t_disc')||'A confirmar',due:val('t_due'),pri:val('t_pri'),done:false});save()}
-function addGrade(){let v=parseFloat(val('g_value'));if(isNaN(v)){toast('Digite uma nota válida.');return}db.grades.push({id:id(),title:val('g_title'),disc:val('g_disc')||'A confirmar',value:v,weight:parseFloat(val('g_weight'))||0});save()}
-function addGoal(){db.goals.push({id:id(),title:val('m_title'),cat:val('m_cat'),due:val('m_due'),done:false});save()}
-function addReading(){db.readings.push({id:id(),title:val('r_title'),author:val('r_author'),type:val('r_type'),done:false});save()}
-function addReview(){db.reviews.push({id:id(),q:val('v_q'),a:val('v_a'),topic:val('v_topic'),date:val('v_date'),level:1});save()}
-function addReflection(){db.reflections.push({id:id(),date:val('f_date')||new Date().toISOString().slice(0,10),learn:val('f_learn'),hard:val('f_hard'),review:val('f_review'),next:val('f_next')});save()}
-function addDev(){db.devotionals.push({id:id(),date:val('dv_date')||new Date().toISOString().slice(0,10),ref:val('dv_ref')||'A inserir / A confirmar',god:val('dv_god'),christ:val('dv_christ'),prayer:val('dv_prayer'),apply:val('dv_apply')});save()}
-function addBible(){db.bible.push({id:id(),ref:val('b_ref'),topic:val('b_topic'),note:val('b_note')});save()}
-function addTheology(){db.theology.push({id:id(),title:val('th_title'),cat:val('th_cat'),source:val('th_source')});save()}
-function val(x){return document.getElementById(x)?.value.trim()||''}
-function remove(type,i){if(confirm('Excluir este registro?')){db[type].splice(i,1);save()}}
-function toggle(type,i){db[type][i].done=!db[type][i].done;save()}
-function renderList(id,arr,fn){document.getElementById(id).innerHTML=arr.length?arr.map(fn).join(''):`<div class="empty">Nenhum registro ainda. Use o botão/campo acima para começar.</div>`}
-function renderAll(){
-renderList('discList',db.disciplines,(x,i)=>`<div class="item"><div class="item-row"><div><b>${esc(x.name)}</b><div class="small">${esc(x.code)} · Termo ${esc(x.term)} · ${esc(x.credits)} créditos</div></div><button class="btn red" onclick="remove('disciplines',${i})">Excluir</button></div><p><span class="badge">${esc(x.status)}</span></p></div>`);
-renderList('eventList',db.events,(x,i)=>`<div class="item"><div class="item-row"><div><b>${esc(x.title)}</b><div class="small">${esc(x.date)} · ${esc(x.cat)}</div></div><button class="btn red" onclick="remove('events',${i})">Excluir</button></div></div>`);
-renderList('studyList',db.study,(x,i)=>`<div class="item"><div class="item-row"><div><b>${esc(x.topic)||'Sessão de estudo'}</b><div class="small">${esc(x.date)} · ${esc(x.start)}–${esc(x.end)} · ${esc(x.disc)}</div><div class="small">${mins(x.start,x.end)} minutos · concentração ${esc(x.focus)||'—'}/5</div></div><button class="btn red" onclick="remove('study',${i})">Excluir</button></div></div>`);
-renderList('taskList',db.tasks,(x,i)=>`<div class="item ${x.done?'done':''}"><div class="item-row"><div><b>${esc(x.title)||'Tarefa sem título'}</b><div class="small">${esc(x.disc)} · prazo ${esc(x.due)||'A confirmar'} · <span class="badge">${esc(x.pri)}</span></div></div><div class="actions"><button class="btn alt" onclick="toggle('tasks',${i})">${x.done?'Reabrir':'Concluir'}</button><button class="btn red" onclick="remove('tasks',${i})">Excluir</button></div></div></div>`);
-renderList('gradeList',db.grades,(x,i)=>`<div class="item"><div class="item-row"><div><b>${esc(x.title)||'Avaliação'}</b><div class="small">${esc(x.disc)} · peso ${x.weight||'—'}</div></div><div><span class="num">${x.value}</span> <button class="btn red" onclick="remove('grades',${i})">Excluir</button></div></div></div>`);
-renderList('goalList',db.goals,(x,i)=>`<div class="item ${x.done?'done':''}"><div class="item-row"><div><b>${esc(x.title)}</b><div class="small">${esc(x.cat)} · ${esc(x.due)||'Sem prazo'}</div></div><div class="actions"><button class="btn alt" onclick="toggle('goals',${i})">${x.done?'Reabrir':'Concluir'}</button><button class="btn red" onclick="remove('goals',${i})">Excluir</button></div></div></div>`);
-renderList('readList',db.readings,(x,i)=>`<div class="item ${x.done?'done':''}"><div class="item-row"><div><b>${esc(x.title)}</b><div class="small">${esc(x.author)} · ${esc(x.type)}</div></div><div class="actions"><button class="btn alt" onclick="toggle('readings',${i})">${x.done?'Reabrir':'Concluir'}</button><button class="btn red" onclick="remove('readings',${i})">Excluir</button></div></div></div>`);
-renderList('reviewList',db.reviews,(x,i)=>`<div class="item"><b>${esc(x.q)}</b><p>${esc(x.a)}</p><div class="small">${esc(x.topic)} · próxima revisão ${esc(x.date)||'A confirmar'} · nível ${x.level}/4</div><button class="btn red" onclick="remove('reviews',${i})">Excluir</button></div>`);
-renderList('reflectionList',db.reflections,(x,i)=>`<div class="item"><b>${esc(x.date)}</b><p><b>Aprendi:</b> ${esc(x.learn)}</p><p><b>Difícil:</b> ${esc(x.hard)}</p><p><b>Revisar:</b> ${esc(x.review)}</p><p><b>Próximo passo:</b> ${esc(x.next)}</p><button class="btn red" onclick="remove('reflections',${i})">Excluir</button></div>`);
-renderList('devList',db.devotionals,(x,i)=>`<div class="item"><b>${esc(x.date)} · ${esc(x.ref)}</b><p><b>Deus:</b> ${esc(x.god)}</p><p><b>Cristo:</b> ${esc(x.christ)}</p><p><b>Oração:</b> ${esc(x.prayer)}</p><p><b>Aplicação:</b> ${esc(x.apply)}</p><button class="btn red" onclick="remove('devotionals',${i})">Excluir</button></div>`);
-renderList('bibList',db.bible,(x,i)=>`<div class="item"><b>${esc(x.ref)}</b><div class="small">${esc(x.topic)}</div><p>${esc(x.note)}</p><button class="btn red" onclick="remove('bible',${i})">Excluir</button></div>`);
-renderList('theologyList',db.theology,(x,i)=>`<div class="item"><b>${esc(x.title)}</b><div class="small">${esc(x.cat)} · Fonte: ${esc(x.source)||'A confirmar'}</div><button class="btn red" onclick="remove('theology',${i})">Excluir</button></div>`);
-let tt=db.tasks.filter(x=>!x.done).length, td=db.tasks.filter(x=>!x.done&&x.due===new Date().toISOString().slice(0,10)).length, hours=Math.round(db.study.reduce((a,x)=>a+mins(x.start,x.end),0)/6)/10;
-document.getElementById('todayTasks').textContent=td;document.getElementById('pendingTasks').textContent=tt;document.getElementById('studyHours').textContent=hours+'h';document.getElementById('goalCount').textContent=db.goals.filter(x=>!x.done).length;
-let taskP=db.tasks.length?Math.round(db.tasks.filter(x=>x.done).length/db.tasks.length*100):0,goalP=db.goals.length?Math.round(db.goals.filter(x=>x.done).length/db.goals.length*100):0,discP=db.disciplines.length?Math.round(db.disciplines.filter(x=>x.status==='Concluída').length/db.disciplines.length*100):0;
-document.getElementById('taskBar').style.width=taskP+'%';document.getElementById('goalBar').style.width=goalP+'%';document.getElementById('discBar').style.width=discP+'%';
-document.getElementById('taskProg').textContent=taskP+'% concluído';document.getElementById('goalProg').textContent=goalP+'% concluído';document.getElementById('discProg').textContent=discP+'% concluído';
-let vals=db.grades.map(x=>x.value);document.getElementById('avgGrade').textContent=vals.length?(vals.reduce((a,b)=>a+b,0)/vals.length).toFixed(2):'—';document.getElementById('gradeCount').textContent=vals.length;
-let overall=Math.round((taskP+goalP+discP)/3);document.getElementById('overallBar').style.width=overall+'%';document.getElementById('overallText').textContent=overall+'% · calculado somente a partir dos registros locais.';
-document.getElementById('courseMap').innerHTML=Array.from({length:20},(_,i)=>`<div class="card"><b>Curso ${i+1}</b><div class="small">Nome: A confirmar</div><div class="small">Termo: A confirmar</div><div class="small">Créditos: A confirmar</div></div>`).join('');
-let alerts=[];let today=new Date().toISOString().slice(0,10);db.tasks.filter(x=>!x.done&&x.due&&x.due<=today).forEach(x=>alerts.push('🔴 Prazo: '+x.title));db.reviews.filter(x=>x.date===today).forEach(x=>alerts.push('🟡 Revisão: '+x.q));document.getElementById('alertList').innerHTML=alerts.length?alerts.map(x=>`<div class="item">${esc(x)}</div>`).join(''):'<div class="empty">Nenhum alerta calculado para hoje.</div>';
-}
-document.getElementById('globalSearch').addEventListener('input',e=>{let q=e.target.value.toLowerCase().trim();if(!q){document.getElementById('searchResults').innerHTML='<div class="empty">Digite algo para pesquisar.</div>';return}let all=[];Object.entries(db).forEach(([k,a])=>a.forEach(x=>{let s=JSON.stringify(x).toLowerCase();if(s.includes(q))all.push({k,x})}));document.getElementById('searchResults').innerHTML=all.length?all.slice(0,100).map(y=>`<div class="item"><span class="badge">${esc(y.k)}</span><p>${esc(JSON.stringify(y.x,null,2))}</p></div>`).join(''):'<div class="empty">Nada encontrado.</div>';go('pesquisa')});
-function exportData(){let blob=new Blob([JSON.stringify(db,null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='ester-uop-2026-backup.json';a.click();URL.revokeObjectURL(a.href)}
-function importData(e){let f=e.target.files[0];if(!f)return;let r=new FileReader();r.onload=()=>{try{let x=JSON.parse(r.result);db={...blank,...x};save();toast('Backup importado.')}catch(err){toast('Arquivo JSON inválido.')}};r.readAsText(f)}
-function clearData(){if(confirm('Isso apagará os registros locais deste aplicativo. Você tem um backup?')){localStorage.removeItem(KEY);db=load();renderAll();toast('Dados locais limpos.')}}
-let focus=false;function toggleFocus(){focus=!focus;document.body.style.filter=focus?'saturate(.8)':'';document.querySelector('.nav').style.display=focus?'none':'';document.querySelector('.search').style.display=focus?'none':'';document.querySelector('.focus').textContent=focus?'Sair do foco':'Modo foco'}
-renderAll();
-</script>
+<footer><div class="wrap">Caderno Acadêmico Digital · Ester Moreira · 2026 · Dados locais no navegador. Para informações acadêmicas oficiais, confira sempre a conta e o catálogo UoPeople.</div></footer>
+
+<div class="focus" id="focusModal"><div class="focusbox"><h2>Modo foco</h2><p>Agora só existe uma tarefa.</p><div class="timer" id="modalTimer">25:00</div><button class="btn" onclick="closeFocus()">Voltar</button></div></div>
+<script src="app.js"></script><script>if("serviceWorker" in navigator){navigator.serviceWorker.register("sw.js").catch(()=>{})}</script>
 </body></html>

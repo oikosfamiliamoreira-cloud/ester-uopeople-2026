@@ -1,0 +1,9 @@
+{
+  "name": "Ester Moreira · Caderno Acadêmico",
+  "short_name": "Caderno Ester",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#f5f3ed",
+  "theme_color": "#2f511f",
+  "lang": "pt-BR"
+}

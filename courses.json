@@ -1,0 +1,305 @@
+{
+  "updated": "2026-08-31",
+  "program": "Associate of Science in Business Administration (AS-BA)",
+  "credits_goal": 60,
+  "courses_goal": 20,
+  "courses": [
+    {
+      "order": 1,
+      "code": "UNIV 1001",
+      "name": "Online Education Strategies",
+      "type": "General Education",
+      "credits": 3,
+      "prereq": "None",
+      "status": "verified",
+      "source": "UoPeople 2025/26 Catalog — General Education Requirements for Associate’s Degrees"
+    },
+    {
+      "order": 2,
+      "code": "BUS 1101",
+      "name": "Principles of Business Management",
+      "type": "Major / prerequisite",
+      "credits": 3,
+      "prereq": "None",
+      "status": "verified",
+      "source": "UoPeople 2025/26 Catalog — AS-BA"
+    },
+    {
+      "order": 3,
+      "code": "ENGL 1102",
+      "name": "English Composition 2",
+      "type": "General Education",
+      "credits": 3,
+      "prereq": "None",
+      "status": "verified",
+      "source": "UoPeople 2025/26 Catalog — General Education Requirements for Associate’s Degrees"
+    },
+    {
+      "order": 4,
+      "code": "BUS 1102",
+      "name": "Basic Accounting",
+      "type": "Major",
+      "credits": 3,
+      "prereq": "BUS 1101",
+      "status": "verified",
+      "source": "UoPeople 2025/26 Catalog — AS-BA"
+    },
+    {
+      "order": 5,
+      "code": "GE-SBS",
+      "name": "Social & Behavioral Sciences — choose one",
+      "type": "General Education",
+      "credits": 3,
+      "prereq": "None",
+      "status": "verified",
+      "source": "UoPeople 2025/26 Catalog — GE options"
+    },
+    {
+      "order": 6,
+      "code": "BUS 1103",
+      "name": "Microeconomics",
+      "type": "Major",
+      "credits": 3,
+      "prereq": "BUS 1101",
+      "status": "verified",
+      "source": "UoPeople 2025/26 Catalog — AS-BA"
+    },
+    {
+      "order": 7,
+      "code": "GE-SBS-2",
+      "name": "Social & Behavioral Sciences — second course",
+      "type": "General Education",
+      "credits": 3,
+      "prereq": "None",
+      "status": "verified",
+      "source": "UoPeople 2025/26 Catalog — AS-BA learning pathway example / GE requirements"
+    },
+    {
+      "order": 8,
+      "code": "BUS 1104",
+      "name": "Macroeconomics",
+      "type": "Major",
+      "credits": 3,
+      "prereq": "BUS 1101",
+      "status": "verified",
+      "source": "UoPeople 2025/26 Catalog — AS-BA"
+    },
+    {
+      "order": 9,
+      "code": "GE-MATH-1",
+      "name": "Quantitative Reasoning — choose one",
+      "type": "General Education",
+      "credits": 3,
+      "prereq": "See course prerequisite",
+      "status": "verified",
+      "source": "UoPeople 2025/26 Catalog — GE requirements"
+    },
+    {
+      "order": 10,
+      "code": "BUS 2201",
+      "name": "Principles of Marketing",
+      "type": "Major",
+      "credits": 3,
+      "prereq": "BUS 1101",
+      "status": "verified",
+      "source": "UoPeople 2025/26 Catalog — AS-BA"
+    },
+    {
+      "order": 11,
+      "code": "GE-MATH-2",
+      "name": "Quantitative Reasoning — second course",
+      "type": "General Education",
+      "credits": 3,
+      "prereq": "See course prerequisite",
+      "status": "verified",
+      "source": "UoPeople 2025/26 Catalog — GE requirements"
+    },
+    {
+      "order": 12,
+      "code": "BUS 2202",
+      "name": "E-Commerce",
+      "type": "Major",
+      "credits": 3,
+      "prereq": "BUS 1101",
+      "status": "verified",
+      "source": "UoPeople 2025/26 Catalog — AS-BA"
+    },
+    {
+      "order": 13,
+      "code": "PHIL 1404",
+      "name": "Ethics and Social Responsibility",
+      "type": "General Education",
+      "credits": 3,
+      "prereq": "None",
+      "status": "verified",
+      "source": "UoPeople 2025/26 Catalog — GE requirements"
+    },
+    {
+      "order": 14,
+      "code": "BUS 2203",
+      "name": "Principles of Finance 1",
+      "type": "Major",
+      "credits": 3,
+      "prereq": "BUS 1102",
+      "status": "verified",
+      "source": "UoPeople 2025/26 Catalog — AS-BA"
+    },
+    {
+      "order": 15,
+      "code": "GE-NAT",
+      "name": "Natural Science — choose one",
+      "type": "General Education",
+      "credits": 3,
+      "prereq": "None",
+      "status": "verified",
+      "source": "UoPeople 2025/26 Catalog — GE requirements"
+    },
+    {
+      "order": 16,
+      "code": "COM 2001",
+      "name": "Professional Communication",
+      "type": "General Education",
+      "credits": 3,
+      "prereq": "None",
+      "status": "verified",
+      "source": "UoPeople 2025/26 Catalog — GE requirements / AS-BA"
+    },
+    {
+      "order": 17,
+      "code": "GE-HUM",
+      "name": "Humanities — choose one",
+      "type": "General Education",
+      "credits": 3,
+      "prereq": "None",
+      "status": "verified",
+      "source": "UoPeople 2025/26 Catalog — GE requirements"
+    },
+    {
+      "order": 18,
+      "code": "ELECTIVE",
+      "name": "Elective — choose with UoPeople pathway",
+      "type": "Elective",
+      "credits": 3,
+      "prereq": "None",
+      "status": "to_confirm",
+      "source": "UoPeople 2025/26 Catalog — Electives"
+    },
+    {
+      "order": 19,
+      "code": "HIST 1421",
+      "name": "Greek and Roman Civilization",
+      "type": "General Education",
+      "credits": 3,
+      "prereq": "None",
+      "status": "verified",
+      "source": "UoPeople 2025/26 Catalog — GE requirements"
+    },
+    {
+      "order": 20,
+      "code": "BUS 2207",
+      "name": "Multinational Management",
+      "type": "Major",
+      "credits": 3,
+      "prereq": "BUS 2201",
+      "status": "verified",
+      "source": "UoPeople 2025/26 Catalog — AS-BA"
+    }
+  ],
+  "ge_options": {
+    "Social & Behavioral Sciences": [
+      [
+        "ECON 1580",
+        "Applied Economics: Theory and Practice"
+      ],
+      [
+        "POLS 1503",
+        "Globalization"
+      ],
+      [
+        "PSYC 1111",
+        "Introduction to Health Psychology"
+      ],
+      [
+        "PSYC 1205",
+        "Emotional Intelligence"
+      ],
+      [
+        "PSYC 1504",
+        "Introduction to Psychology"
+      ],
+      [
+        "SOC 1502",
+        "Introduction to Sociology"
+      ]
+    ],
+    "Quantitative Reasoning": [
+      [
+        "MATH 1201",
+        "College Algebra"
+      ],
+      [
+        "MATH 1211",
+        "Calculus"
+      ],
+      [
+        "MATH 1280",
+        "Introduction to Statistics"
+      ]
+    ],
+    "Natural Science": [
+      [
+        "BIOL 1301",
+        "Introduction to Biology"
+      ],
+      [
+        "BIOL 1121",
+        "Biology 1 for Health Studies Majors"
+      ],
+      [
+        "ENVS 1301",
+        "Introduction to Environmental Sciences"
+      ]
+    ],
+    "Humanities": [
+      [
+        "AHIST 1401",
+        "Art History"
+      ],
+      [
+        "PHIL 1402",
+        "Introduction to Philosophy"
+      ],
+      [
+        "ENGL 1405",
+        "World Literature"
+      ]
+    ]
+  },
+  "sources": [
+    {
+      "title": "UoPeople Undergraduate Catalog 2025/26 (official PDF)",
+      "url": "https://catalog.uopeople.edu/wp-content/uploads/2026/05/UG-Catalog-AY2025-2026-New-Updates.pdf",
+      "use": "Primary source for degree requirements, GE, AS-BA major, academic rules."
+    },
+    {
+      "title": "UoPeople 2025/26 online catalog",
+      "url": "https://catalog.uopeople.edu/undergraduate-catalog-term-1",
+      "use": "Official searchable catalog and current policies."
+    },
+    {
+      "title": "AS-BA official program page",
+      "url": "https://www.uopeople.edu/programs/online-associates/business-administration/",
+      "use": "Official program overview, current public program facts and fees."
+    },
+    {
+      "title": "ASBA course page",
+      "url": "https://www.uopeople.edu/programs/online-associates/business-administration/courses/",
+      "use": "Official course overview."
+    },
+    {
+      "title": "UoPeople cost calculator",
+      "url": "https://www.uopeople.edu/uopeople-cost-calculator/",
+      "use": "Official course/fee reference."
+    }
+  ]
+}
