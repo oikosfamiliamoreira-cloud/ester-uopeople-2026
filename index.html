@@ -3,73 +3,85 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#234b2b">
+<meta name="theme-color" content="#285b32">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
 <link rel="manifest" href="manifest.webmanifest">
-<title>Caderno Acadêmico — Ester Moreira</title>
+<title>Ester • Caderno Acadêmico</title>
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <header class="topbar">
-  <div><span class="eyebrow">CADERNO ACADÊMICO</span><h1>Ester Moreira</h1></div>
-  <button class="iconBtn" onclick="document.body.classList.toggle('focus')">☼</button>
+  <div><span class="eyebrow">CADERNO PESSOAL</span><h1>Ester</h1></div>
+  <button class="iconBtn" id="focusBtn" aria-label="Modo foco">☼</button>
 </header>
-
 <main>
 <section id="inicio" class="page active">
   <div class="hero">
     <div class="eyebrow">UNIVERSITY OF THE PEOPLE • 2026</div>
-    <h2>Seu centro pessoal de estudos, rotina e bem-estar.</h2>
+    <h2>Estudar, cuidar de mim e manter a vida organizada.</h2>
     <p id="today" class="muted"></p>
     <div class="stats">
-      <div><b>60</b><span>créditos</span></div><div><b>20</b><span>disciplinas</span></div><div><b>10</b><span>termos</span></div>
+      <div><b id="statCredits">60</b><span>créditos</span></div>
+      <div><b id="statCourses">20</b><span>disciplinas</span></div>
+      <div><b id="statTerms">10</b><span>termos</span></div>
     </div>
   </div>
-  <div class="card progressCard"><div class="row"><div><span class="eyebrow">PROGRESSO ACADÊMICO</span><h3 id="progressText"></h3></div><span class="percent" id="progressPercent">0%</span></div><div class="progress"><i id="progressBar"></i></div></div>
+  <div class="card progressCard">
+    <div class="row"><div><span class="eyebrow">MEU PROGRESSO</span><h3 id="progressText">Carregando…</h3></div><span class="percent" id="progressPercent">0%</span></div>
+    <div class="progress"><i id="progressBar"></i></div>
+  </div>
   <div class="grid2">
-    <button class="bigTile" data-page="faculdade" onclick="nav('faculdade')">🎓<b>Faculdade</b><small>Plano, termos e disciplinas</small></button>
-    <button class="bigTile" data-page="rotina" onclick="nav('rotina')">⏱️<b>Estudo</b><small>Temporizador e rotina</small></button>
-    <button class="bigTile" data-page="devocional" onclick="nav('devocional')">🙏<b>Devocional</b><small>Reflexão e oração</small></button>
-    <button class="bigTile" data-page="saude" onclick="nav('saude')">🌿<b>Bem-estar</b><small>Físico, mental e emocional</small></button>
+    <button class="bigTile" onclick="nav('faculdade')">🎓<b>Faculdade</b><small>Curso, termos, datas e plano</small></button>
+    <button class="bigTile" onclick="nav('disciplinas')">📚<b>Disciplinas</b><small>20 matérias, objetivos e descrições</small></button>
+    <button class="bigTile" onclick="nav('rotina')">⏱️<b>Foco & estudo</b><small>Temporizador e hábitos</small></button>
+    <button class="bigTile" onclick="nav('devocional')">🙏<b>Devocional</b><small>Leitura, reflexão e oração</small></button>
+    <button class="bigTile" onclick="nav('saude')">🌿<b>Eu comigo</b><small>Físico, mental e emocional</small></button>
+    <button class="bigTile" onclick="nav('alertas')">🔔<b>Alertas</b><small>Lembretes e compromissos</small></button>
+  </div>
+  <div class="card installCard">
+    <span class="emoji">📱</span><div><h3>Usar como aplicativo</h3><p class="muted">No iPhone: Compartilhar → Adicionar à Tela de Início.</p></div>
   </div>
 </section>
 
 <section id="faculdade" class="page">
-  <div class="sectionTitle"><span class="eyebrow">01 • FACULDADE</span><h2>University of the People</h2><p class="muted">Bachelor/Associate pathway de Ciência da Computação — personalize sua sequência conforme o portal acadêmico.</p></div>
-  <div class="card"><h3>Objetivo do programa</h3><p>Construir conhecimento em programação, sistemas, bancos de dados, redes, engenharia de software e resolução de problemas computacionais.</p><div class="tagRow"><span class="pill">Online</span><span class="pill">3 créditos por disciplina</span><span class="pill">60 créditos no plano atual</span></div></div>
+  <div class="sectionTitle"><span class="eyebrow">01 • FACULDADE</span><h2 id="programName">University of the People</h2><p id="programPath" class="muted">Carregando seu programa…</p></div>
+  <div class="card"><span class="eyebrow">OBJETIVO DO PROGRAMA</span><h3>Organizar sua formação de forma clara</h3><p id="programObjective">Acompanhar disciplinas, créditos, termos, pré-requisitos e datas em um único lugar.</p><div class="tagRow"><span class="pill">100% online</span><span class="pill">60 créditos</span><span class="pill">20 disciplinas</span></div></div>
+  <div class="card"><span class="eyebrow">CALENDÁRIO</span><h3>Termos e datas</h3><p class="muted">As datas do planejamento aparecem abaixo. Datas futuras podem precisar de confirmação no portal da UoPeople.</p></div>
   <div id="terms"></div>
-  <div class="card"><button id="clearProgress" class="danger">Limpar progresso acadêmico</button></div>
+  <div class="card"><button id="clearProgress" class="danger wide">Limpar progresso acadêmico</button></div>
 </section>
 
 <section id="disciplinas" class="page">
-  <div class="sectionTitle"><span class="eyebrow">02 • CURRÍCULO</span><h2>Disciplinas</h2><p class="muted">Pesquise por código, nome ou objetivo. Toque em uma disciplina para acompanhar o estudo.</p></div>
-  <div class="filters"><input id="courseSearch" placeholder="Pesquisar código, disciplina ou objetivo"><select id="courseFilter"><option>Todas</option><option>Computação</option><option>Matemática</option><option>Universidade</option><option>Comunicação</option></select></div>
+  <div class="sectionTitle"><span class="eyebrow">02 • CURRÍCULO</span><h2>Disciplinas</h2><p class="muted">Nome, código, créditos, termo, pré-requisito, objetivo e descrição.</p></div>
+  <div class="filters"><input id="courseSearch" placeholder="Pesquisar código, disciplina ou objetivo"><select id="courseFilter"><option>Todas</option><option>Major</option><option>General Education</option></select></div>
   <div id="courseList"></div>
-  <div class="sourceNote">Base curricular inicial: catálogo UoPeople 2025/26. Confirme sua Learning Pathway individual no portal da universidade.</div>
+  <div class="sourceNote">Catálogo de referência salvo no projeto. A Learning Pathway individual deve ser confirmada no portal acadêmico.</div>
 </section>
 
 <section id="rotina" class="page">
-  <div class="sectionTitle"><span class="eyebrow">03 • ROTINA</span><h2>Foco & estudo</h2><p class="muted">Use o temporizador para sessões de estudo e marque hábitos concluídos.</p></div>
+  <div class="sectionTitle"><span class="eyebrow">03 • ROTINA</span><h2>Foco & estudo</h2><p class="muted">Sessões de foco e pequenos hábitos do dia.</p></div>
   <div class="timer card"><span class="eyebrow">POMODORO</span><div id="timer">25:00</div><div class="timerBtns"><button id="timerStart" class="primary">Iniciar</button><button id="timerPause">Pausar</button><button id="timerReset">Reiniciar</button></div></div>
   <div class="card"><h3>Hoje</h3><div class="habitGrid"><button data-habit="study">📚 Estudar</button><button data-habit="reading">📖 Leitura</button><button data-habit="exercise">🏃 Movimento</button><button data-habit="water">💧 Água</button><button data-habit="sleep">🌙 Sono</button><button data-habit="pause">🧘 Pausa</button></div></div>
 </section>
 
 <section id="devocional" class="page">
-  <div class="sectionTitle"><span class="eyebrow">04 • VIDA DEVOCIONAL</span><h2>Devocional</h2><p class="muted">Um espaço simples para registrar o que você leu, refletiu e orou hoje.</p></div>
-  <div class="card"><label>Versículo / leitura</label><textarea id="devVerse" placeholder="Escreva aqui..."></textarea><label>Reflexão</label><textarea id="devReflection" placeholder="O que aprendi hoje?"></textarea><label>Oração</label><textarea id="devPrayer" placeholder="Registre sua oração..."></textarea><button id="devSave" class="primary wide">Salvar devocional</button></div>
+  <div class="sectionTitle"><span class="eyebrow">04 • VIDA DEVOCIONAL</span><h2>Devocional</h2><p class="muted">Registro pessoal de leitura, reflexão e oração.</p></div>
+  <div class="card"><label>Versículo / leitura</label><textarea id="devVerse" placeholder="O que li hoje?"></textarea><label>Reflexão</label><textarea id="devReflection" placeholder="O que aprendi ou percebi?"></textarea><label>Oração</label><textarea id="devPrayer" placeholder="Minha oração..."></textarea><button id="devSave" class="primary wide">Salvar devocional</button></div>
 </section>
 
 <section id="saude" class="page">
-  <div class="sectionTitle"><span class="eyebrow">05 • BEM-ESTAR</span><h2>Eu comigo</h2><p class="muted">Acompanhe aspectos físicos, mentais e emocionais sem transformar o app em uma ferramenta médica.</p></div>
+  <div class="sectionTitle"><span class="eyebrow">05 • EU COMIGO</span><h2>Bem-estar</h2><p class="muted">Acompanhe sua rotina pessoal sem transformar o app em ferramenta médica.</p></div>
   <div class="grid2">
     <div class="card"><span class="emoji">🏃‍♀️</span><h3>Saúde física</h3><p>Movimento, água, alimentação, sono e pausas.</p><button data-habit="exercise">Registrar movimento</button></div>
     <div class="card"><span class="emoji">🧠</span><h3>Saúde mental</h3><p>Foco, descanso, limites digitais e organização.</p><button data-habit="pause">Registrar pausa</button></div>
-    <div class="card"><span class="emoji">❤️</span><h3>Emocional</h3><p>Como estou me sentindo? O que preciso hoje?</p><textarea placeholder="Registro pessoal..."></textarea></div>
-    <div class="card"><span class="emoji">🤝</span><h3>Apoios</h3><p>Lista de pessoas, serviços e recursos importantes.</p><textarea placeholder="Nome / contato / recurso..."></textarea></div>
+    <div class="card"><span class="emoji">❤️</span><h3>Emocional</h3><p>Como estou hoje? O que preciso?</p><textarea id="emotionNote" placeholder="Registro pessoal..."></textarea><button id="emotionSave" class="primary wide">Salvar registro</button></div>
+    <div class="card"><span class="emoji">🤝</span><h3>Apoios</h3><p>Guarde pessoas ou recursos importantes.</p><textarea id="supportNote" placeholder="Nome / contato / recurso..."></textarea><button id="supportSave" class="wide">Salvar apoios</button></div>
   </div>
 </section>
 
 <section id="alertas" class="page">
-  <div class="sectionTitle"><span class="eyebrow">06 • ORGANIZAÇÃO</span><h2>Alertas</h2><p class="muted">Cadastre lembretes importantes para estudos e vida pessoal.</p></div>
+  <div class="sectionTitle"><span class="eyebrow">06 • ORGANIZAÇÃO</span><h2>Alertas</h2><p class="muted">Lembretes pessoais salvos no aparelho.</p></div>
   <button id="addAlert" class="primary wide">＋ Novo alerta</button>
   <div id="alertList" class="stack"></div>
 </section>
@@ -78,13 +90,11 @@
 <nav class="bottomNav">
   <button class="navBtn active" data-page="inicio">⌂<span>Início</span></button>
   <button class="navBtn" data-page="faculdade">🎓<span>Faculdade</span></button>
-  <button class="navBtn" data-page="disciplinas">📚<span>Disciplinas</span></button>
+  <button class="navBtn" data-page="disciplinas">📚<span>Matérias</span></button>
   <button class="navBtn" data-page="rotina">⏱️<span>Foco</span></button>
   <button class="navBtn" data-page="saude">🌿<span>Eu comigo</span></button>
 </nav>
 <div id="toast"></div>
-<script>
-window.COURSES = [{"term": 1, "code": "UNIV 1001", "name": "Online Education Strategies", "credits": 3, "type": "Universidade", "objective": "Desenvolver estratégias para estudar com autonomia em um ambiente universitário online, organizar o tempo e participar de atividades acadêmicas."}, {"term": 1, "code": "CS 1111", "name": "Introduction to Computer Science", "credits": 3, "type": "Computação", "objective": "Construir uma base em computação, incluindo sistemas numéricos, lógica, sistemas operacionais, redes, segurança e fundamentos de programação.", "description": "Introdução aos principais princípios da Ciência da Computação, com visão equilibrada entre conceitos teóricos e aplicações práticas."}, {"term": 2, "code": "CS 1101", "name": "Programming Fundamentals", "credits": 3, "type": "Computação", "objective": "Aprender fundamentos de programação usando Python e desenvolver raciocínio lógico para resolver problemas computacionais.", "description": "Fundamentos de programação e conceitos abstratos aplicáveis a diferentes linguagens."}, {"term": 2, "code": "MATH 1201", "name": "College Algebra", "credits": 3, "type": "Matemática", "objective": "Consolidar álgebra necessária para o desenvolvimento acadêmico e para disciplinas quantitativas da graduação."}, {"term": 3, "code": "CS 1102", "name": "Programming 1", "credits": 3, "type": "Computação", "objective": "Aprender estruturas fundamentais de programação, tipos de dados, decisões, laços, strings, procedimentos, arrays, testes e depuração.", "description": "Curso introdutório que utiliza Java para ensinar conceitos fundamentais de programação."}, {"term": 3, "code": "MATH 1280", "name": "Introduction to Statistics", "credits": 3, "type": "Matemática", "objective": "Desenvolver capacidade de interpretar dados, estatísticas descritivas, probabilidade e resultados quantitativos."}, {"term": 4, "code": "CS 1103", "name": "Programming 2", "credits": 3, "type": "Computação", "objective": "Aprofundar programação com recursão, estruturas de dados, Collections e desenvolvimento de programas mais robustos e eficientes.", "description": "Continuação de Programming 1, com conceitos avançados de Java e introdução a ferramentas profissionais."}, {"term": 4, "code": "CS 1105", "name": "Digital Electronics & Computer Architecture", "credits": 3, "type": "Computação", "objective": "Compreender circuitos digitais, lógica booleana, memória, aritmética computacional, CPU e princípios de arquitetura de computadores.", "description": "Abrange eletrônica digital, projeto lógico, sistemas numéricos, memória e arquitetura de computadores."}, {"term": 5, "code": "CS 2203", "name": "Databases 1", "credits": 3, "type": "Computação", "objective": "Aprender modelagem, projeto e implementação de bancos de dados relacionais e fundamentos de SQL.", "description": "Introduz conceitos fundamentais para projetar, utilizar e implementar sistemas de banco de dados."}, {"term": 5, "code": "CS 2204", "name": "Communications and Networking", "credits": 3, "type": "Computação", "objective": "Compreender comunicação entre sistemas, redes, protocolos e fundamentos de conectividade entre computadores."}, {"term": 6, "code": "CS 2205", "name": "Web Programming 1", "credits": 3, "type": "Computação", "objective": "Desenvolver fundamentos para criação de aplicações e páginas web, conectando programação e tecnologias da web.", "description": "Curso de programação web do percurso de Ciência da Computação."}, {"term": 6, "code": "CS 2301", "name": "Operating Systems 1", "credits": 3, "type": "Computação", "objective": "Compreender conceitos essenciais de sistemas operacionais, gerenciamento de recursos e comunicação entre sistemas.", "description": "Introduz conceitos de sistemas operacionais e a comunicação e ligação entre sistemas computacionais."}, {"term": 7, "code": "CS 2401", "name": "Software Engineering 1", "credits": 3, "type": "Computação", "objective": "Aprender engenharia de requisitos, identificação de stakeholders, elicitação, modelagem, especificação e validação de requisitos.", "description": "Foca o processo de engenharia de software e o desenvolvimento e gerenciamento de requisitos."}, {"term": 7, "code": "COM 2001", "name": "Professional Communication", "credits": 3, "type": "Comunicação", "objective": "Desenvolver comunicação profissional escrita e oral para contextos acadêmicos e de trabalho."}, {"term": 8, "code": "CS 3303", "name": "Data Structures", "credits": 3, "type": "Computação", "objective": "Compreender estruturas de dados e algoritmos, incluindo pilhas, filas, listas, tabelas hash, árvores, grafos e análise algorítmica.", "description": "Curso com forte componente teórico e aplicações para resolução de problemas."}, {"term": 8, "code": "MATH 1302", "name": "Discrete Mathematics", "credits": 3, "type": "Matemática", "objective": "Desenvolver raciocínio matemático discreto aplicado à computação, lógica, conjuntos, relações e estruturas."}, {"term": 9, "code": "CS 3305", "name": "Web Programming 2", "credits": 3, "type": "Computação", "objective": "Aprofundar desenvolvimento web e aplicar conceitos mais avançados na construção de aplicações."}, {"term": 9, "code": "CS 3306", "name": "Databases 2", "credits": 3, "type": "Computação", "objective": "Aprofundar bancos de dados, projeto, implementação e utilização de sistemas de dados em cenários mais complexos."}, {"term": 10, "code": "CS 3307", "name": "Operating Systems 2", "credits": 3, "type": "Computação", "objective": "Aprofundar sistemas operacionais com concorrência, computação paralela, transações, memória compartilhada, mensagens, escala e segurança.", "description": "Continuação de Operating Systems 1 para tópicos complexos de sistemas operacionais."}, {"term": 10, "code": "CS 4407", "name": "Data Mining and Machine Learning", "credits": 3, "type": "Computação", "objective": "Introduzir conceitos de machine learning, descoberta de conhecimento, mineração de dados e avaliação de algoritmos.", "description": "Apresenta conceitos atuais de aprendizagem de máquina e data mining."}];
-</script>
 <script src="app.js"></script>
-</body></html>
+</body>
+</html>
