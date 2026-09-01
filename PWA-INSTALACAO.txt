@@ -1,0 +1,21 @@
+CADERNO ESTER — INSTALAÇÃO NO IPHONE
+
+1. Envie estes arquivos para a raiz do repositório GitHub, substituindo os existentes quando solicitado:
+   manifest.webmanifest
+   sw.js
+   icon-192.svg
+   icon-512.svg
+
+2. No index.html existente, antes de </body>, coloque:
+   <script>
+   if ('serviceWorker' in navigator) {
+     window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(()=>{}));
+   }
+   </script>
+
+3. Abra o GitHub Pages no Safari.
+4. Toque em Compartilhar.
+5. Escolha Adicionar à Tela de Início.
+6. Abra pelo novo ícone Caderno Ester.
+
+O app funciona como PWA, sem App Store.

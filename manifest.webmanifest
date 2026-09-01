@@ -1,9 +1,25 @@
 {
   "name": "Caderno Acadêmico — Ester Moreira",
   "short_name": "Caderno Ester",
-  "start_url": ".",
+  "start_url": "./",
+  "scope": "./",
   "display": "standalone",
+  "orientation": "portrait",
   "background_color": "#f4f2eb",
   "theme_color": "#285b32",
-  "description": "Caderno acadêmico, rotina, devocional e bem-estar."
+  "description": "Caderno acadêmico, rotina, devocional e bem-estar.",
+  "icons": [
+    {
+      "src": "icon-192.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-512.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
 }
